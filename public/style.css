@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+}
+
+/* NAVBAR */
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+.image{
+    
+    width: 150px;
+}
+.list{
+    display: flex;
+    color: aliceblue;
+    list-style: none;
+    gap: 20px;
+}
