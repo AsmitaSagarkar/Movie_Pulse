@@ -1,11 +1,12 @@
-import Logo from "../assets/logo.png";
+import Logo from "../assets/MoviePulse.png";
+
 export default function Nav(){
 
     return(
     <nav className="nav">
     
-    <img src= {Logo} className="image"/>
-   
+ <img src= {Logo} className="image" alt = "Logo"/>
+
     <div className="items">
     <ul className="list">
     <li>Home</li>
