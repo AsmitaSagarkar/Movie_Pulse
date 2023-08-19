@@ -1,3 +1,26 @@
-h1{
+.moviename{
     color: aliceblue;
+}
+.poster{
+    position : relative;
+}
+.posterimage{
+    width: 100%;
+    
+    
+}
+.carousel .slide img{
+    height: 450px;
+}
+.detail{
+    position: absolute;
+    z-index: 10;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    text-align: left;
+    color: aliceblue;
+    
 }
