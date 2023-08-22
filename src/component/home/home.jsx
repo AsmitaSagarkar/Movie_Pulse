@@ -16,7 +16,7 @@ export default function Home() {
                 <Carousel
                     showThumbs={false}
                     autoPlay={true}
-                    transitionTime={3}
+                    transitionTime={4}
                     infiniteLoop={true}
                     showStatus={false}
                     stopOnHover={true}
@@ -28,8 +28,8 @@ export default function Home() {
                             </div>
                             <div className="detail">
                                 <div className="title">{movie ? movie.original_title : ""}</div>
-                                <div className="extradetails">{movie ? movie.release_date : ""}</div>
-                                <div className="releasedate">
+                                <div className="releasedate">{movie ? movie.release_date : ""}</div>
+                                <div className="ratings">
                                     {movie ? movie.vote_average : ""}<i class="fa-solid fa-star"></i>{" "}
                                 </div>
 
