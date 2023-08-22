@@ -22,5 +22,22 @@
     align-items: flex-start;
     text-align: left;
     color: aliceblue;
+    margin-left: 50PX;
+    margin-right: 50px;
     
+}
+.title{
+    font-size: 70px;
+    color: #FFAC41;
+}
+.releasedate{
+    font-size: 30px;
+}
+.description{
+    font-size: 20px;
+}
+@media (max-width:60rem){
+    body{
+        overflow-x: hidden;
+    }
 }
