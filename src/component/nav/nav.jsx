@@ -8,9 +8,9 @@ import { useState } from "react";
 export default function Nav() {
 
     const [navBarOpen, isNavBarOpen] = useState(false);
-    const toggleNavBar = () => {
-        isNavBarOpen(!navBarOpen);
-    };
+    // const toggleNavBar = () => {
+    //     isNavBarOpen(!navBarOpen);
+    // };
 
 
     return (
@@ -19,18 +19,17 @@ export default function Nav() {
             <img src={Logo} className="image" alt="Logo" />
 
             <div className="items">
-                <div className={`list ${navBarOpen ? 'open' : ''}`}>
-                    <div className="toggle" onClick={toggleNavBar}><img className="toggleicon" src={navBarOpen ? Menu : Close} /></div>
-                    <Link className="link" to="/">Home</Link>
-                    <Link className="link" to="/movies/popular">Popular</Link>
-                    <Link className="link" to="/movies/topRated">Top Rated</Link>
-                    <Link className="link" to="/movies/upcoming">Upcoming</Link>
-                    <div className="navbarButton">
-                        <img className="icons menu" src={Menu} />
-                        <img className="icons close" src={Close} />
-                    </div>
+
+                <Link className="link" to="/">Home</Link>
+                <Link className="link" to="/movies/popular">Popular</Link>
+                <Link className="link" to="/movies/topRated">Top Rated</Link>
+                <Link className="link" to="/movies/upcoming">Upcoming</Link>
+                <div className="navbarButton">
+                    <img className="icons menu" src={Menu} />
+                    <img className="icons close" src={Close} />
                 </div>
             </div>
+
         </nav>
     )
 }
