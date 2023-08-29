@@ -27,8 +27,9 @@
     
 }
 .title{
-    font-size: 70px;
-    color: #FFAC41;
+    font-size: 50px;
+    /* color: #FFAC41; */
+    color:aliceblue;
 }
 .releasedate{
     font-size: 30px;
