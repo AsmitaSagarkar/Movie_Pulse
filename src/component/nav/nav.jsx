@@ -7,10 +7,10 @@ import { useState } from "react";
 
 export default function Nav() {
 
-    const [navBarOpen, isNavBarOpen] = useState(false);
-    // const toggleNavBar = () => {
-    //     isNavBarOpen(!navBarOpen);
-    // };
+    const [navBarOpen, setNavBarOpen] = useState(false);
+    const toggleNavBar = () => {
+        setNavBarOpen(!navBarOpen);
+    };
 
 
     return (
@@ -24,11 +24,12 @@ export default function Nav() {
                 <Link className="link" to="/movies/popular">Popular</Link>
                 <Link className="link" to="/movies/topRated">Top Rated</Link>
                 <Link className="link" to="/movies/upcoming">Upcoming</Link>
-                <div className="navbarButton">
-                    <img className="icons menu" src={Menu} />
-                    <img className="icons close" src={Close} />
-                </div>
+                
             </div>
+            <div className="navbarButton" onClick={toggleNavBar}>
+                    <span className="icons menu"> {navBarOpen? Menu:Close} </span>
+                    
+                </div>
 
         </nav>
     )
