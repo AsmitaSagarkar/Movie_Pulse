@@ -29,7 +29,7 @@ export default function Nav() {
             <div className="navbarButton" onClick={toggleNavBar}>
                     <span className="icons menu"> {navBarOpen? Menu:Close} </span>
                     
-                </div>
+            </div>
 
         </nav>
     )
