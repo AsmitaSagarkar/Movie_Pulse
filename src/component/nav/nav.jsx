@@ -5,9 +5,9 @@ import { AiOutlineInstagram, AiOutlineFacebook, AiOutlineTwitter } from 'react-i
 import { CiMenuFries } from 'react-icons/ci';
 
 import { Link } from "react-router-dom";
-import "./nav.css";
+// import "./nav.css";
+import "../../index.css";
 import { useState } from "react";
-
 
 export default function Nav() {
     const [showIcons,setShowIcons] =useState(false);
@@ -19,25 +19,26 @@ export default function Nav() {
     
 
     return (
-        <nav className="nav">
-            <div className="left">
+        <div className="bg-black m-0 p-0 box-border overflow-hidden">
+        <nav className="grid justify-between grid-cols-3">
+            <div className="flex justify-center">
                 <img src={Logo} className="image" alt="Logo" />
             </div>
 
-            <div className="mid">
-                <div className="link">
-                    <Link className="tag" to="/">Home</Link>
-                    <Link className="tag" to="/movies/popular">Popular</Link>
-                    <Link className="tag" to="/movies/topRated">Top Rated</Link>
-                    <Link className="tag" to="/movies/upcoming">Upcoming</Link></div>
+            <div className="grid grid-col-4">
+                <div className="">
+                    <Link  to="/" className = "text-neutral-100">Home</Link>
+                    <Link className="text-neutral-100"to="/movies/popular">Popular</Link>
+                    <Link className="text-neutral-100" to="/movies/topRated">Top Rated</Link>
+                    <Link className="text-neutral-100" to="/movies/upcoming">Upcoming</Link></div>
 
             </div>
 
-            <div className="right">
-                <div className="social-media">
-                    <Link to="#" className="icons instagram"><AiOutlineInstagram /></Link>
-                    <Link to="#" className="icons"><AiOutlineFacebook /></Link>
-                    <Link to="#" className="icons"><AiOutlineTwitter /></Link>
+            <div className="grid">
+                <div className="grid align-middle justify-around place-items-center">
+                    <Link to="#" className="text-neutral-100 text-3xl "><AiOutlineInstagram /></Link>
+                    <Link to="#" className="text-neutral-100 text-3xl"><AiOutlineFacebook /></Link>
+                    <Link to="#" className="text-neutral-100 text-3xl"><AiOutlineTwitter /></Link>
                 </div>
 
                 <div className="menu">
@@ -48,5 +49,6 @@ export default function Nav() {
             </div>
 
         </nav>
+        </div>
     )
 }
