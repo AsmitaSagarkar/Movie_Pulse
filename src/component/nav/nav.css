@@ -35,11 +35,11 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-.tag {
+/* .tag {
     color: #fff;
     font-size: 22px;
     text-decoration: none;
-}
+} */
 .right{
     grid-column: 4/5;
     display: grid;
