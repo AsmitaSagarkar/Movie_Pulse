@@ -10,45 +10,46 @@ import "../../index.css";
 import { useState } from "react";
 
 export default function Nav() {
-    const [showIcons,setShowIcons] =useState(false);
-    function toggle(){
+    const [showIcons, setShowIcons] = useState(false);
+    function toggle() {
         setShowIcons(!showIcons);
 
     }
 
-    
+
 
     return (
-        <div className="bg-black m-0 p-0 box-border overflow-hidden">
-        <nav className="grid justify-between grid-cols-3">
-            <div className="flex justify-center">
+
+        <nav className="grid md:justify-between md:grid-cols-3 ">
+            <div className="md:flex md:justify-center">
                 <img src={Logo} className="image" alt="Logo" />
             </div>
 
-            <div className="grid grid-col-4">
-                <div className="">
-                    <Link  to="/" className = "text-neutral-100">Home</Link>
-                    <Link className="text-neutral-100"to="/movies/popular">Popular</Link>
-                    <Link className="text-neutral-100" to="/movies/topRated">Top Rated</Link>
-                    <Link className="text-neutral-100" to="/movies/upcoming">Upcoming</Link></div>
+            <div className="md:flex md:justify-around md:items-center md:static absolute right-3 top-24 z-10 ">
 
+                <div><Link to="/" className="text-neutral-100">Home</Link></div>
+                <div><Link className="text-neutral-100" to="/movies/popular">Popular</Link></div>
+                <div><Link className="text-neutral-100" to="/movies/topRated">Top Rated</Link></div>
+                <div><Link className="text-neutral-100" to="/movies/upcoming">Upcoming</Link></div>
             </div>
 
-            <div className="grid">
-                <div className="grid align-middle justify-around place-items-center">
-                    <Link to="#" className="text-neutral-100 text-3xl "><AiOutlineInstagram /></Link>
-                    <Link to="#" className="text-neutral-100 text-3xl"><AiOutlineFacebook /></Link>
-                    <Link to="#" className="text-neutral-100 text-3xl"><AiOutlineTwitter /></Link>
-                </div>
 
-                <div className="menu">
-                    <Link to="#" onClick={toggle}><CiMenuFries className="menufries" /></Link>
+
+            <div className="md:flex md:items-center md:justify-center">
+                <div className="flex md:items-center md:justify-center md:gap-3 md:static absolute right-3 top-52 z-10 ">
+                    <div><Link to="#" className="text-neutral-100 text-3xl "><AiOutlineInstagram /></Link></div>
+                    <div><Link to="#" className="text-neutral-100 text-3xl"><AiOutlineFacebook /></Link></div>
+                    <div><Link to="#" className="text-neutral-100 text-3xl"><AiOutlineTwitter /></Link></div></div>
+
+
+                <div className="md:hidden absolute right-3 top-8 z-10">
+                    <Link to="#" onClick={toggle}><CiMenuFries className="text-neutral-100 text-3xl" /></Link>
                 </div>
 
 
             </div>
 
         </nav>
-        </div>
+
     )
 }
