@@ -2,6 +2,7 @@ import Nav from "./component/nav/nav";
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import Home from "./component/home/home";
 // import "../public/style.css";
+import "./index.css";
 
 export default function Main(){
     return(
