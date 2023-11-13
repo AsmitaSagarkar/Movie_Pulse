@@ -20,17 +20,17 @@ export default function Nav() {
 
     return (
 
-        <nav className="grid md:justify-between md:grid-cols-3 ">
+        <nav className="grid md:justify-between md:grid-cols-3 mt-7">
             <div className="md:flex md:justify-center">
                 <img src={Logo} className="image" alt="Logo" />
             </div>
 
             <div className="md:flex md:justify-around md:items-center md:static absolute right-3 top-24 z-10 ">
 
-                <div><Link to="/" className="text-neutral-100">Home</Link></div>
-                <div><Link className="text-neutral-100" to="/movies/popular">Popular</Link></div>
-                <div><Link className="text-neutral-100" to="/movies/topRated">Top Rated</Link></div>
-                <div><Link className="text-neutral-100" to="/movies/upcoming">Upcoming</Link></div>
+                <div><Link to="/" className="text-neutral-100 md:text-xl">Home</Link></div>
+                <div><Link className="text-neutral-100 md:text-xl" to="/movies/popular">Popular</Link></div>
+                <div><Link className="text-neutral-100 md:text-xl" to="/movies/topRated">Top Rated</Link></div>
+                <div><Link className="text-neutral-100 md:text-xl" to="/movies/upcoming">Upcoming</Link></div>
             </div>
 
 
