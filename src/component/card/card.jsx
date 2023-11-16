@@ -6,23 +6,23 @@ import "../../index.css";
 
 const Card = ({ movie }) => {
 
-    // const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setIsLoading(true);
-    //     }, 1500);
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 1500);
 
-    // }, [])
+    }, [])
 
     return <>
     
-            // isLoading ?
-            // <div><SkeletonTheme color="#202020" highlightColor='#444'>
-            //     <Skeleton height={300} duration={2} />
-            // </SkeletonTheme></div>
+            {isLoading ?
+            <div><SkeletonTheme color="#202020" highlightColor='#444'>
+                <Skeleton height={300} duration={2} />
+            </SkeletonTheme></div>
+            :
             
-            // :
 
             <Link to={`movie/${movie.id}`}>
 
@@ -36,7 +36,7 @@ const Card = ({ movie }) => {
                     </div>
                 </div>
 
-            </Link>
+            </Link>}
             
 
         </>
