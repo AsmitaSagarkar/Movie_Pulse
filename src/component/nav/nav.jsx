@@ -29,7 +29,7 @@ export default function Nav() {
 
                 <div><Link to="/" className="text-neutral-100 md:text-xl">Home</Link></div>
                 <div><Link className="text-neutral-100 md:text-xl" to="/movies/popular">Popular</Link></div>
-                <div><Link className="text-neutral-100 md:text-xl" to="/movies/topRated">Top Rated</Link></div>
+                <div><Link className="text-neutral-100 md:text-xl" to="/movies/top_rated">Top Rated</Link></div>
                 <div><Link className="text-neutral-100 md:text-xl" to="/movies/upcoming">Upcoming</Link></div>
             </div>
 
