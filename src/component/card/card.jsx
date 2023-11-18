@@ -4,7 +4,7 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import { Link } from 'react-router-dom';
 import "../../index.css";
 
-const Card = ({ movie }) => {
+const Card = ({movie}) => {
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -26,7 +26,7 @@ const Card = ({ movie }) => {
             :
             
             <div >
-            <Link to={`movie/${movie.id}`}>
+            <Link to={`/movie/${movie.id}`}>
 
                 <div> 
                     <img className = "h-64 w-72 border-white border-2 rounded-2xl"src={`https://image.tmdb.org/t/p/original${movie ? movie.poster_path : ""}`} alt='loading'></img>
@@ -36,7 +36,7 @@ const Card = ({ movie }) => {
                         <div className='text-neutral-200 text-right'>{(movie ? movie.vote_average : " ").toString().slice(0,3)}/10</div></div>
                         
 
-                    <Link to={`movie/${movie.id}`} className='text-neutral-200 font-bold'>Read More</Link>
+                    <Link to={`/movie/${movie.id}`} className='text-neutral-200 font-bold'>Read More</Link>
                     </div>
                 </div>
 
