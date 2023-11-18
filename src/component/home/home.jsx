@@ -24,7 +24,7 @@ export default function Home() {
                     stopOnHover={true}
                 >
                     {popularMovies.map(movie => (
-                        <Link to={`/movies/${movie.id}`}>
+                        <Link to={`/movie/${movie.id}`}>
                             <div className="w-full mt-12 ">
                                 <img className="md:h-screen h-96 opacity-50" src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} alt="movieposter"></img>
                             </div>
