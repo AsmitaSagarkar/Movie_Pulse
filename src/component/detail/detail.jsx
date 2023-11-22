@@ -33,10 +33,11 @@ export default function Detail() {
                  <div className="text-neutral-100">{movieDetail ? movieDetail.release_date : ""}</div>
                  <div className="text-neutral-100">{movieDetail ? movieDetail.budget : ""}</div>
                  <div className="text-neutral-100">{(movieDetail ? movieDetail.vote_average : "").toString().slice(0,3)}/10</div>
-            </div>
+            </div>   
 
             <div className="text-neutral-100">
-            
+
+            console.log(movieDetail.genres);
             
             </div>
 
