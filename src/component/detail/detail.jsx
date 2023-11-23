@@ -26,16 +26,16 @@ export default function Detail() {
                     <img className="h-4/6 w-4/6 " src={`https://image.tmdb.org/t/p/original${movieDetail ? movieDetail.poster_path : ""}`} alt='loading'></img>
                 </div>
 
-                <div className="grid h-96">
+                <div className="grid h-80 gap-3">
                     <h2 className="text-neutral-100 text-5xl font-bold">{movieDetail ? movieDetail.original_title : ""}</h2>
                     
-                    <div className="text-neutral-100 grid grid-cols-3">
+                    <div className="text-neutral-100 flex gap-4 h-9 w-12">
 
                         {
                             movieDetail && movieDetail.genres
                                 ?
                                 movieDetail.genres.map(genre => (
-                                    <span className="text-neutral-100 bg-slate-900  p-1 rounded-xl">{genre.name}</span>
+                                    <div className=" pl-3 pr-3 text-neutral-100 p-1 text-xl bg-slate-900 rounded-xl">{genre.name}</div>
 
                                 ))
                                 :
@@ -47,14 +47,16 @@ export default function Detail() {
                     <div className="text-neutral-100 text-2xl">"{movieDetail?movieDetail.tagline:""}"</div>
 
                     
+                    <div><h3 className="text-neutral-100 text-2xl font-bold">About the Movie</h3></div>
+                    <div className="flex gap-6 text-xl">
 
-                    <div>
-
-                        <div className="text-neutral-100">{movieDetail ? movieDetail.release_date : ""}</div>
-                        <div className="text-neutral-100">{movieDetail ? movieDetail.budget : ""}</div>
-                        <div className="text-neutral-100">{(movieDetail ? movieDetail.vote_average : "").toString().slice(0, 3)}/10</div>
-                        <div className="text-neutral-100">{movieDetail ? movieDetail.overview : ""}</div>
+                        <div className="text-neutral-100">Release Date : {movieDetail ? movieDetail.release_date : ""}</div>
+                        <div className="text-neutral-100">Budget: {movieDetail ? movieDetail.budget : ""}</div>
+                        <div className="text-neutral-100">Ratings(out of 10) :{(movieDetail ? movieDetail.vote_average : "").toString().slice(0, 3)}</div>
+                        
                     </div>
+                    <h2 className="text-neutral-100 text-2xl font-bold">Quick Description</h2>
+                        <div className="text-neutral-100 text-xl">{movieDetail ? movieDetail.overview : ""}</div>
             
 
             <div>
