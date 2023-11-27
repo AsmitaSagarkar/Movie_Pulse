@@ -29,7 +29,7 @@ const Movie = () => {
                 {
                     movielist.map(movie=>
                     (
-                        <Card  movie={movie}/>
+                        <Card movie={movie}/>
                     )
                     )
                 }
