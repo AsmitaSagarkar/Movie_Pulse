@@ -34,20 +34,20 @@ export default function Nav() {
 
             <div className="md:flex md:justify-around md:items-center md:static absolute right-3 top-24 z-10 ">
 
-                <div><Link to="/" className="text-blue-500 md:text-xl">Home</Link></div>
-                <div><Link className="text-blue-500 md:text-xl" to="/movies/popular">Popular</Link></div>
-                <div><Link className="text-blue-500 md:text-xl" to="/movies/top_rated">Top Rated</Link></div>
-                <div><Link className="text-blue-500 md:text-xl" to="/movies/upcoming">Upcoming</Link></div>
+                <div><Link to="/" className="text-nav md:text-2xl font-fontfam font-bold">Home</Link></div>
+                <div><Link className="text-nav md:text-2xl font-fontfam font-bold" to="/movies/popular">Popular</Link></div>
+                <div><Link className="text-nav md:text-2xl font-fontfam font-bold" to="/movies/top_rated">Top Rated</Link></div>
+                <div><Link className="text-nav md:text-2xl font-fontfam font-bold" to="/movies/upcoming">Upcoming</Link></div>
             </div>
 
 
 
             <div className="md:flex md:items-center md:justify-center">
                 <div className="flex md:items-center md:justify-center md:gap-3 md:static absolute right-3 top-52 z-10 ">
-                    <div><Link to="#" className="text-blue-500 text-3xl "><AiOutlineInstagram /></Link></div>
-                    <div><Link to="#" className="text-blue-500 text-3xl"><AiOutlineFacebook /></Link></div>
-                    <div><Link to="#" className="text-blue-500 text-3xl"><AiOutlineTwitter /></Link></div>
-                    <Link onClick={toggleTheme}><div className="text-blue-500 text-3xl flex items-center"><LightModeIcon /></div></Link>
+                    <div><Link to="#" className="text-nav md:text-3xl font-fontfam font-bold "><AiOutlineInstagram /></Link></div>
+                    <div><Link to="#" className="text-nav md:text-3xl font-fontfam font-bold"><AiOutlineFacebook /></Link></div>
+                    <div><Link to="#" className="text-nav md:text-3xl font-fontfam font-bold"><AiOutlineTwitter /></Link></div>
+                    <Link onClick={toggleTheme}><div className="text-nav md:text-3xl font-fontfam font-bold flex items-center"><LightModeIcon /></div></Link>
                     
                     
                 </div>

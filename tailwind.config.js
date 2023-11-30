@@ -9,6 +9,10 @@ module.exports = {
         'headings' : '#1A202C',
         'nav':'#2C7A7B',
       },
+      fontFamily:{
+        'fontfam':['-apple-system','system-ui','BlinkMacSystemFont',"Segoe UI",'Roboto',"Helvetica Neue",'Arial,sans-serif' ],
+
+      },
     },
   },
   plugins: [],
