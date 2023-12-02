@@ -1,10 +1,10 @@
 import Logo from "./logo.png";
-// import Menu from "./menu.png";
-// import Close from "./close.png";
+
 import { AiOutlineInstagram, AiOutlineFacebook, AiOutlineTwitter } from 'react-icons/ai';
 import { CiMenuFries } from 'react-icons/ci';
 import LightModeIcon from '@mui/icons-material/LightMode';
-// import DarkModeIcon from '@mui/icons-material/DarkMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import CloseIcon from '@mui/icons-material/Close';
 
 import { Link } from "react-router-dom";
 // import "./nav.css";
@@ -13,13 +13,21 @@ import { useState } from "react";
 
 export default function Nav() {
     const [showIcons, setShowIcons] = useState(false);
-    function toggle() {
+    function handleToggle() {
         setShowIcons(!showIcons);
 
     }
-    function toggleTheme(){
-        document.documentElement.classList.toggle("dark");
+    function addDark(){
+        document.documentElement.classList.add("dark");
     }
+    function removeDark(){
+        document.documentElement.classList.remove("dark");
+    }
+    const[isToggle,setIsToggle]=useState(false);
+    function toggle(){
+        setIsToggle(!isToggle);
+    }
+
     
 
     
@@ -27,7 +35,7 @@ export default function Nav() {
 
     return (
 
-        <nav className="grid md:justify-between md:grid-cols-3 mt-7">
+        <nav className="grid md:justify-between md:grid-cols-3 mt-7 dark:bg-slate-900">
             <div className="md:flex md:justify-center">
                 <img src={Logo} className="image" alt="Logo" />
             </div>
@@ -47,7 +55,13 @@ export default function Nav() {
                     <div><Link to="#" className="text-nav md:text-3xl font-fontfam font-bold "><AiOutlineInstagram /></Link></div>
                     <div><Link to="#" className="text-nav md:text-3xl font-fontfam font-bold"><AiOutlineFacebook /></Link></div>
                     <div><Link to="#" className="text-nav md:text-3xl font-fontfam font-bold"><AiOutlineTwitter /></Link></div>
-                    <Link onClick={toggleTheme}><div className="text-nav md:text-3xl font-fontfam font-bold flex items-center"><LightModeIcon /></div></Link>
+
+                    <Link><div className="text-nav md:text-3xl font-fontfam font-bold flex items-center">{showIcons ? 
+                        <DarkModeIcon onClick={() => { handleToggle(); addDark(); }}  />
+                       : 
+                        <LightModeIcon onClick={() => { handleToggle(); removeDark(); }}  />
+                      }
+                </div></Link>
                     
                     
                 </div>
@@ -55,7 +69,8 @@ export default function Nav() {
 
 
                 <div className="md:hidden absolute right-3 top-8 z-10">
-                    <Link to="#" onClick={toggle}><CiMenuFries className="text-blue-500 text-3xl" /></Link>
+                    <Link to="#" onClick={handleToggle}>
+                    <div className="text-blue-500 text-3xl">{isToggle?<CloseIcon onClick={toggle}/> : <CiMenuFries onClick={toggle}/>}</div></Link>
                 </div>
 
 
