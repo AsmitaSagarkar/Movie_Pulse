@@ -26,9 +26,9 @@ export default function Home() {
                     {popularMovies.map(movie => (
                         <Link to={`/movie/${movie.id}`}>
                             <div className="w-full mt-12 ">
-                                <img className="md:h-screen h-96 " src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} alt="movieposter"></img>
+                                <img className="md:h-screen h-96 dark:opacity-70 opacity-90 brightness-50" src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} alt="movieposter"></img>
                             </div>
-                            <div className="md:absolute md:bottom-24 flex flex-col text-left  md:ml-14 md:mr-14 text-headings mb-12 md:mb-0 mt-12">
+                            <div className="md:absolute md:bottom-24 flex flex-col text-left  md:ml-14 md:mr-14  mb-12 md:mb-0 mt-12 text-white ">
                                 <div className="md:text-5xl text-2xl font-bold">{movie ? movie.original_title : ""}</div>
                                 <div className="md:text-2xl text-lg  mt-2 ">{movie ? movie.release_date : ""}</div>
                                 <div className="md:text-2xl text-lg  mt-2">

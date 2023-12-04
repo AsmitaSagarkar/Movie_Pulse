@@ -3,7 +3,7 @@ import { CiMenuFries } from 'react-icons/ci';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import CloseIcon from '@mui/icons-material/Close';
-import Pulse from "./pulse (1).png";
+import Logo from "./logo.png";
 import { Link } from "react-router-dom";
 
 import "../../index.css";
@@ -33,9 +33,9 @@ export default function Nav() {
 
     return (
 
-        <nav className="grid md:justify-between md:grid-cols-3 md:mt-7 dark:bg-slate-900 gap-20">
+        <nav className="grid md:justify-between md:grid-cols-3 md:mt-7 gap-20">
             <div className="md:flex md:justify-center md:text-2xl font-fontfam font-bold md:mr-5">
-                <img className="w-24 h-24" src={Pulse} alt='loading'/>
+                <img className="w-36 h-28 rounded-tl-2xl rounded-br-2xl" src={Logo} alt='loading'/>
             </div>
 
             <div className="md:flex md:justify-around md:items-center md:static absolute right-3 top-24 z-10 gap-3 ml-5 mr-5">
