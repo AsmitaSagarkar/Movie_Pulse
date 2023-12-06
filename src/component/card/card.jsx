@@ -29,14 +29,14 @@ const Card = ({movie}) => {
             <Link to={`/movie/${movie.id}`}>
 
                 <div> 
-                    <img className = "h-64 w-72 border-white border-2 rounded-2xl"src={`https://image.tmdb.org/t/p/original${movie ? movie.poster_path : ""}`} alt='loading'></img>
+                    <img className = "h-64 w-72 border-nav border-2 rounded-2xl"src={`https://image.tmdb.org/t/p/original${movie ? movie.poster_path : ""}`} alt='loading'></img>
                     <div className='p-2'>
-                        <div className='text-blue-500 font-bold text-lg'>{movie ? movie.original_title : ""}</div>
-                        <div className='grid grid-cols-2'><div className='text-blue-500'>{movie ? movie.release_date : ""}</div>
-                        <div className='text-blue-500 text-right'>{(movie ? movie.vote_average : " ").toString().slice(0,3)}/10</div></div>
+                        <div className='text-nav font-bold text-lg'>{movie ? movie.original_title : ""}</div>
+                        <div className='grid grid-cols-2'><div className='text-nav'>{movie ? movie.release_date : ""}</div>
+                        <div className='text-nav text-right'>{(movie ? movie.vote_average : " ").toString().slice(0,3)}/10</div></div>
                         
 
-                    <Link to={`/movie/${movie.id}`} className='text-blue-500 font-bold'>Read More</Link>
+                    <Link to={`/movie/${movie.id}`} className='text-nav font-bold'>Read More</Link>
                     </div>
                 </div>
 
