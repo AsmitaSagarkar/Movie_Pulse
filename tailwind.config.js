@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+// @type {import('tailwindcss').Config} 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: 'class',
@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       colors:{
         'headings' : '#1A202C',
-        'nav':'#2C7A7B',
+        'nav':'#27005D',
+        'background':'#E4C2C1',
       },
       fontFamily:{
         'fontfam':['-apple-system','system-ui','BlinkMacSystemFont',"Segoe UI",'Roboto',"Helvetica Neue",'Arial,sans-serif' ],
