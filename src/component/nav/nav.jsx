@@ -68,7 +68,7 @@ export default function Nav() {
 
                 <div className="md:hidden absolute right-3 top-4 z-10">
                     <Link to="#" onClick={handleToggle}>
-                    <div className="text-white text-3xl">{isToggle?<CloseIcon 
+                    <div className="text-nav text-3xl">{isToggle?<CloseIcon 
                         onClick={toggle} className="mb-5 text-3xl"/> : <CiMenuFries onClick={toggle}/>}</div></Link>
                 </div>
 
