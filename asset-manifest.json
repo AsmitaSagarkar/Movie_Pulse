@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Movie_Pulse/static/css/main.90954112.css",
+    "main.js": "/Movie_Pulse/static/js/main.2e8fac9c.js",
+    "static/media/logo.png": "/Movie_Pulse/static/media/logo.e5d9324a1764b1ed4138.png",
+    "index.html": "/Movie_Pulse/index.html",
+    "main.90954112.css.map": "/Movie_Pulse/static/css/main.90954112.css.map",
+    "main.2e8fac9c.js.map": "/Movie_Pulse/static/js/main.2e8fac9c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90954112.css",
+    "static/js/main.2e8fac9c.js"
+  ]
+}
