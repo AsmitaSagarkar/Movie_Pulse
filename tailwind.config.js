@@ -8,7 +8,8 @@ module.exports = {
       colors:{
         'headings' : '#1A202C',
         'nav':'#27005D',
-        'background':'#E4C2C1',
+        'background':'#AED2FF',
+        'darkBg':'#1a202c',
       },
       fontFamily:{
         'fontfam':['-apple-system','system-ui','BlinkMacSystemFont',"Segoe UI",'Roboto',"Helvetica Neue",'Arial,sans-serif' ],

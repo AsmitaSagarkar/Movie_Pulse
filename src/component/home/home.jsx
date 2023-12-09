@@ -14,7 +14,7 @@ export default function Home() {
     }, [])
     return (
         <>
-            <div className="relative">
+            <div className="relative dark:bg-darkBg">
                 <Carousel
                     showThumbs={false}
                     autoPlay={false}
@@ -28,7 +28,7 @@ export default function Home() {
                             <div className="w-full mt-12 ">
                                 <img className="md:h-screen h-96 dark:opacity-70 opacity-80 brightness-50" src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} alt="movieposter"></img>
                             </div>
-                            <div className="md:absolute md:bottom-24 flex flex-col text-left  md:ml-14 md:mr-14  mb-12 md:mb-0 mt-12 text-black font-bold">
+                            <div className="md:absolute md:bottom-24 flex flex-col text-left  md:ml-14 md:mr-14  mb-12 md:mb-0 mt-12 text-black dark:text-white font-bold">
                                 <div className="md:text-5xl text-2xl ">{movie ? movie.original_title : ""}</div>
                                 <div className="md:text-2xl text-lg  mt-2 ">{movie ? movie.release_date : ""}</div>
                                 <div className="md:text-2xl text-lg  mt-2">
