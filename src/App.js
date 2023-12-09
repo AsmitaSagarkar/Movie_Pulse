@@ -17,7 +17,7 @@ export default function Main(){
         <Route path="/" element = {<Home />}></Route>
         <Route path="movie/:id" element={<Detail />}></Route>
         <Route path="movies/:type" element={<Movie />}></Route>
-        <Route path="/*" element={<h1>error</h1>}></Route>
+        
         </Routes>
         </Router>
         </div>
