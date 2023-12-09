@@ -17,7 +17,7 @@ export default function Home() {
             <div className="relative">
                 <Carousel
                     showThumbs={false}
-                    autoPlay={true}
+                    autoPlay={false}
                     transitionTime={4}
                     infiniteLoop={true}
                     showStatus={false}
