@@ -25,6 +25,12 @@ export default function Nav() {
     function toggle(){
         setIsToggle(!isToggle);
     }
+    function addActive(){
+        document.documentElement.classList.add("active");
+    }
+    function removeActive(){
+        document.documentElement.classList.remove("active");
+    }
 
     
 
@@ -33,12 +39,12 @@ export default function Nav() {
 
     return (
 
-        <nav className="grid md:justify-between md:grid-cols-3 md:mt-7 gap-20">
+        <nav className="md:grid md:justify-between md:grid-cols-3 md:mt-7 gap-20 flex flex-row">
             <div className="md:flex md:justify-center md:text-2xl font-fontfam font-bold md:mr-5">
-                <img className="w-36 h-28 rounded-tl-2xl rounded-br-2xl" src={Logo} alt='loading'/>
+                <img className="w-36 h-28 rounded-tl-2xl rounded-br-2xl ml-3 mt-6 md:m-0" src={Logo} alt='loading'/>
             </div>
 
-            <div className="md:flex md:justify-around md:items-center md:static absolute right-3 top-24 z-10 gap-3 ml-5 mr-5">
+            <div className="md:flex md:justify-around md:items-center md:static absolute right-3 top-24 z-10 gap-3 ml-5 mr-5 hidden active:flex">
 
                 <div><Link to="/" className="text-nav dark:text-white md:text-2xl font-fontfam font-bold sm:text-xl">Home</Link></div>
                 <div><Link className="text-nav dark:text-white md:text-2xl font-fontfam font-bold sm:text-xl" to="/movies/popular">Popular</Link></div>
@@ -48,8 +54,8 @@ export default function Nav() {
 
 
 
-            <div className="md:flex md:items-center md:justify-center">
-                <div className="flex md:items-center md:justify-center md:gap-3 md:static absolute right-3 top-52 z-10 ">
+            <div className="md:flex md:items-center md:justify-center ">
+                <div className="md:flex md:items-center md:justify-center md:gap-3 md:static absolute right-3 top-52 z-10 hidden Active:flex">
                     <div><Link to="#" className="text-nav dark:text-white md:text-3xl font-fontfam font-bold "><AiOutlineInstagram /></Link></div>
                     <div><Link to="#" className="text-nav dark:text-white md:text-3xl font-fontfam font-bold"><AiOutlineFacebook /></Link></div>
                     <div><Link to="#" className="text-nav dark:text-white md:text-3xl font-fontfam font-bold"><AiOutlineTwitter /></Link></div>
@@ -68,8 +74,8 @@ export default function Nav() {
 
                 <div className="md:hidden absolute right-3 top-4 z-10">
                     <Link to="#" onClick={handleToggle}>
-                    <div className="text-nav dark:text-white text-3xl">{isToggle?<CloseIcon 
-                        onClick={toggle} className="mb-5 text-3xl"/> : <CiMenuFries onClick={toggle}/>}</div></Link>
+                    <div className="text-nav dark:text-white text-5xl md:m-0 mt-8">
+                    {isToggle?<CloseIcon  onClick={()=>{toggle(); removeActive(); }} className="mb-5 text-5xl"/> : <CiMenuFries onClick={()=>{toggle();addActive();}}/>}</div></Link>
                 </div>
 
 
