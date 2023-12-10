@@ -14,7 +14,7 @@ export default function Main(){
         <Router>
         <Nav />
         <Routes>
-        <Route path="/" element = {<Home />}></Route>
+        <Route path="/*" element = {<Home />}></Route>
         <Route path="movie/:id" element={<Detail />}></Route>
         <Route path="movies/:type" element={<Movie />}></Route>
         
