@@ -24,15 +24,15 @@ export default function Detail() {
                 </div>
 
                 <div className="grid h-80 gap-3 justify-items-center md:justify-items-start">
-                    <h2 className="text-blue-500 md:text-5xl text-4xl font-bold">{movieDetail ? movieDetail.original_title : ""}</h2>
+                    <h2 className="text-nav dark:text-white md:text-5xl text-4xl font-bold">{movieDetail ? movieDetail.original_title : ""}</h2>
                     
-                    <div className="text-blue-500 flex gap-4 h-9 w-12 justify-center md:justify-start">
+                    <div className="text-nav dark:text-white flex gap-4 h-9 w-12 justify-center md:justify-start">
 
                         {
                             movieDetail && movieDetail.genres
                                 ?
                                 movieDetail.genres.map(genre => (
-                                    <div className=" pl-3 pr-3 text-blue-500 p-1 text-xl bg-slate-900 rounded-xl">{genre.name}</div>
+                                    <div className=" pl-3 pr-3 text-white p-1 text-xl bg-slate-900 rounded-xl">{genre.name}</div>
 
                                 ))
                                 :
@@ -41,23 +41,23 @@ export default function Detail() {
                         
 
                     </div>
-                    <div className="text-blue-500 text-2xl text-center md:text-start">"{movieDetail?movieDetail.tagline:""}"</div>
+                    <div className="text-nav dark:text-white font-semibold text-2xl text-center md:text-start">"{movieDetail?movieDetail.tagline:""}"</div>
 
                     
-                    <div><h3 className="text-blue-500 text-2xl font-bold">About the Movie</h3></div>
+                    <div><h3 className="text-nav dark:text-white text-2xl font-bold">About the Movie</h3></div>
                     <div className="flex gap-6 text-xl text-center md:text-start">
 
-                        <div className="text-blue-500">Release Date : {movieDetail ? movieDetail.release_date : ""}</div>
-                        <div className="text-blue-500">Budget: {movieDetail ? movieDetail.budget : ""}</div>
-                        <div className="text-blue-500">Ratings(out of 10) :{(movieDetail ? movieDetail.vote_average : "").toString().slice(0, 3)}</div>
+                        <div className="text-nav dark:text-white font-semibold">Release Date : {movieDetail ? movieDetail.release_date : ""}</div>
+                        <div className="text-nav dark:text-white font-semibold">Budget: {movieDetail ? movieDetail.budget : ""}</div>
+                        <div className="text-nav dark:text-white font-semibold">Ratings(out of 10) :{(movieDetail ? movieDetail.vote_average : "").toString().slice(0, 3)}</div>
                         
                     </div>
-                    <h2 className="text-blue-500 text-2xl font-bold">Quick Description</h2>
-                        <div className="text-blue-500 text-xl text-center md:text-start">{movieDetail ? movieDetail.overview : ""}</div>
+                    <h2 className="text-nav dark:text-white text-2xl font-bold">Quick Description</h2>
+                        <div className="text-nav dark:text-white font-semibold text-xl text-center md:text-start">{movieDetail ? movieDetail.overview : ""}</div>
             
 
             <div>
-                        <Link className="text-blue-500  text-xl p-2  rounded-xl bg-slate-950 hover:bg-slate-900 md:mb-0 mb-2" to={movieDetail ? movieDetail.homepage : ""}>Watch Now <OpenInNewIcon /></Link>
+                        <Link className="text-white  text-xl p-2  rounded-xl bg-slate-950 hover:bg-slate-900 md:mb-0 mb-2" to={movieDetail ? movieDetail.homepage : ""}>Watch Now <OpenInNewIcon /></Link>
                     </div>
 
                 </div>
