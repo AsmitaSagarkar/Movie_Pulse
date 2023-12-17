@@ -5,12 +5,13 @@ import Home from "./component/home/home";
 import "./index.css";
 import Movie from "./component/movie/movie";
 import Detail from "./component/detail/detail";
+import Particlebg from "./particle";
 
 export default function Main(){
     return(
         <div>
 
-        
+        <Particlebg />
         <Router>
         <Nav />
         <Routes>
