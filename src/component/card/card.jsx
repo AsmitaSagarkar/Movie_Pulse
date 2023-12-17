@@ -34,7 +34,7 @@ const Card = ({movie}) => {
                         <div className='text-nav dark:text-cyan-300 font-bold text-lg'>{movie ? movie.original_title : ""}</div>
                         <div className='grid grid-cols-2'><div className='text-nav dark:text-cyan-300'>{movie ? movie.release_date : ""}</div>
                         <div className='text-nav text-right dark:text-cyan-300'>{(movie ? movie.vote_average : " ").toString().slice(0,3)}/10</div></div>
-                        
+                         
 
                     <Link to={`/movie/${movie.id}`} className='text-nav font-bold dark:text-cyan-300'>Read More</Link>
                     </div>
