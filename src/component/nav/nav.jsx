@@ -8,19 +8,23 @@ import { Link } from "react-router-dom";
 
 import "../../index.css";
 import { useState } from "react";
+// import { Menu } from '@mui/material';
 
 export default function Nav() {
     const [showIcons, setShowIcons] = useState(false);
     const[isToggle,setIsToggle]=useState(false);
 
-    function handleToggle() {
-        setShowIcons(!showIcons);
-
-    }
-
-    function toggle(){
+    function showMenu(){
         setIsToggle(!isToggle);
     }
+
+    function handleToggle() {
+        setShowIcons(!showIcons);
+        document.documentElement.classList.add("active");
+
+    }
+
+    
 
     function addDark(){
         document.documentElement.classList.add("dark");
@@ -30,13 +34,7 @@ export default function Nav() {
     }
     
     
-    function addActive(){
-        document.documentElement.classList.add("active");
-    }
-    function removeActive(){
-        document.documentElement.classList.remove("active");
-    }
-
+    
     
 
     
@@ -78,9 +76,9 @@ export default function Nav() {
 
 
                 <div className="md:hidden absolute right-3 top-4 z-10">
-                    <Link to="#" onClick={handleToggle}>
+                   
                     <div className="text-nav dark:text-white text-5xl md:m-0 mt-8">
-                    {isToggle?<CloseIcon  onClick={()=>{toggle(); removeActive(); }} className="mb-5 text-5xl"/> : <CiMenuFries onClick={()=>{toggle();addActive();}} />}</div></Link>
+                    {isToggle ?<CloseIcon  className="mb-5 text-5xl" onClick={showMenu}/>:<CiMenuFries onClick={showMenu}/>}</div>
                 </div>
 
 
