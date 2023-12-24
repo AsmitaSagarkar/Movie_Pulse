@@ -10,81 +10,37 @@ import "../../index.css";
 import { useState } from "react";
 // import { Menu } from '@mui/material';
 
+
 export default function Nav() {
-    const [showIcons, setShowIcons] = useState(false);
-    const[isToggle,setIsToggle]=useState(false);
 
-    function showMenu(){
-        setIsToggle(!isToggle);
+    const [isOpen ,setIsOpen] = useState(false);
+    function toggle(){
+        setIsOpen(!isOpen);
     }
-
-    function handleToggle() {
-        setShowIcons(!showIcons);
-        document.documentElement.classList.add("active");
-
-    }
-
-    
-
-    function addDark(){
-        document.documentElement.classList.add("dark");
-    }
-    function removeDark(){
-        document.documentElement.classList.remove("dark");
-    }
-    
-    
-    
-    
-
-    
-
-
     return (
 
-        <nav className="md:grid md:justify-between md:grid-cols-3 md:mt-7 gap-20 flex flex-row">
-            <div className="md:flex md:justify-center md:text-2xl font-fontfam font-bold md:mr-5">
-                <img className="w-36 h-28 rounded-tl-2xl rounded-br-2xl ml-3 mt-6 md:m-0" src={Logo} alt='loading'/>
-            </div>
-
-            <div className="md:flex md:justify-around md:items-center md:static absolute right-3 top-24 z-10 gap-3 ml-5 mr-5 hidden active:flex">
-
-                <div><Link to="/" className="text-nav dark:text-white md:text-2xl font-fontfam font-bold sm:text-xl">Home</Link></div>
-                <div><Link className="text-nav dark:text-white md:text-2xl font-fontfam font-bold sm:text-xl" to="/movies/popular">Popular</Link></div>
-                <div><Link className="text-nav dark:text-white md:text-2xl font-fontfam font-bold sm:text-xl" to="/movies/top_rated">Trending</Link></div>
-                <div><Link className="text-nav dark:text-white md:text-2xl font-fontfam sm:text-xl font-bold" to="/movies/upcoming">Upcoming</Link></div>
-            </div>
-
-
-
-            <div className="md:flex md:items-center md:justify-center ">
-                <div className="md:flex md:items-center md:justify-center md:gap-3 md:static absolute right-3 top-52 z-10 hidden active:flex">
-                    <div><Link to="#" className="text-nav dark:text-white md:text-3xl font-fontfam font-bold "><AiOutlineInstagram /></Link></div>
-                    <div><Link to="#" className="text-nav dark:text-white md:text-3xl font-fontfam font-bold"><AiOutlineFacebook /></Link></div>
-                    <div><Link to="#" className="text-nav dark:text-white md:text-3xl font-fontfam font-bold"><AiOutlineTwitter /></Link></div>
-
-                    <Link><div className="text-nav dark:text-white md:text-3xl font-fontfam font-bold flex items-center">{showIcons ? 
-                        <LightModeIcon onClick={() => { handleToggle(); removeDark(); }}  />
-                        : 
-                        <DarkModeIcon onClick={() => { handleToggle(); addDark(); }}  />
-                      }
-                </div></Link>
-                    
-                    
-                </div>
-                    
-
-
-                <div className="md:hidden absolute right-3 top-4 z-10">
-                   
-                    <div className="text-nav dark:text-white text-5xl md:m-0 mt-8">
-                    {isToggle ?<CloseIcon  className="mb-5 text-5xl" onClick={showMenu}/>:<CiMenuFries onClick={showMenu}/>}</div>
-                </div>
+        <nav className='grid lg:grid-cols-3 lg:items-center text-nav grid-cols-2'>
+            <div className='flex justify-center mt-5'><img src={Logo} alt='Loading...' className='w-52 h-40' /></div>
+            <div className='lg:flex lg:justify-around text-2xl font-fontfam font-bold hidden'>
+                <Link to="/">Home</Link>
+                <Link to="/movies/popular">Popular</Link>
+                <Link to="/movies/top_rated">Trending</Link>
+                <Link to="/movies/upcoming">Upcoming</Link>
 
 
             </div>
+            
+            <div className='lg:flex lg:flex-row lg:justify-center lg:gap-12 font-fontfam font-bold hidden'>
+            <div className='text-4xl hover:cursor-pointer'><AiOutlineInstagram /></div>
+            <div className='text-4xl hover:cursor-pointer'><AiOutlineFacebook /></div>
+            <div className='text-4xl hover:cursor-pointer'><AiOutlineTwitter /></div>
+            <div className='text-2xl hover:cursor-pointer'><LightModeIcon  /></div>
+
+            </div>
+
+            <button className='lg:hidden font-fontfam font-bold text-3xl flex items-end' onClick={toggle}> {isOpen? <CloseIcon /> : <CiMenuFries />}</button>
+
 
         </nav>
-
     )
 }
