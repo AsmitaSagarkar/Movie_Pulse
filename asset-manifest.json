@@ -1,14 +1,13 @@
 {
   "files": {
-    "main.css": "/Movie_Pulse/static/css/main.8b5682c5.css",
-    "main.js": "/Movie_Pulse/static/js/main.bf4185a6.js",
-    "static/media/logo.png": "/Movie_Pulse/static/media/logo.e5d9324a1764b1ed4138.png",
+    "main.css": "/Movie_Pulse/static/css/main.a0db653f.css",
+    "main.js": "/Movie_Pulse/static/js/main.9e90e20e.js",
     "index.html": "/Movie_Pulse/index.html",
-    "main.8b5682c5.css.map": "/Movie_Pulse/static/css/main.8b5682c5.css.map",
-    "main.bf4185a6.js.map": "/Movie_Pulse/static/js/main.bf4185a6.js.map"
+    "main.a0db653f.css.map": "/Movie_Pulse/static/css/main.a0db653f.css.map",
+    "main.9e90e20e.js.map": "/Movie_Pulse/static/js/main.9e90e20e.js.map"
   },
   "entrypoints": [
-    "static/css/main.8b5682c5.css",
-    "static/js/main.bf4185a6.js"
+    "static/css/main.a0db653f.css",
+    "static/js/main.9e90e20e.js"
   ]
 }
