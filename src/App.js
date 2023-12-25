@@ -9,7 +9,7 @@ import Detail from "./component/detail/detail";
 
 export default function Main(){
     return(
-        <div style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/cubes.png")' }} >
+        <div style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/cubes.png")' }} className="dark:bg-nav" >
 
         
         <Router>

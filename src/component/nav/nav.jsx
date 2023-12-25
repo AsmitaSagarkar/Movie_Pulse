@@ -34,7 +34,7 @@ export default function Nav() {
     return (
 
         <nav className='grid lg:grid-cols-3 lg:items-center text-nav dark:text-neutral-100 grid-cols-2 '>
-            <div className='flex ml-12 my-5'><h1 className='text-nav dark:text-neutral-100 font-fontfam font-bold text-4xl hover:underline hover:cursor-pointer hover:animate-pulse'>MOVIE PULSE</h1></div>
+            <div className='flex ml-12 my-5'><h1 className='text-nav dark:text-neutral-100 font-fontfam font-bold lg:text-4xl text-2xl hover:underline hover:cursor-pointer hover:animate-pulse'>MOVIE PULSE</h1></div>
             <div className='lg:flex lg:justify-around text-2xl font-fontfam font-bold hidden my-5'>
                 <Link to="/" className='hover:underline'>Home</Link>
                 <Link to="/movies/popular"className='hover:underline'>Popular</Link>
@@ -54,11 +54,11 @@ export default function Nav() {
 
             <button className='lg:hidden font-fontfam font-bold text-4xl flex justify-end items-center mr-12 relative' onClick={toggle}> {isOpen? <CloseIcon /> : <CiMenuFries />}</button>
             {isOpen&&(
-                <div className='flex flex-col items-center z-10 absolute top-48  bg-black bg-opacity-60 dark:bg-slate-100 dark:bg-opacity-30  w-screen  p-3 gap-2 font-bold'>
-                <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold '>Home</div>
-                <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'>Popular</div>
-                <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'>Trending</div>
-                <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'>Upcoming</div>
+                <div className='flex flex-col items-center z-10 absolute top-40  bg-black bg-opacity-60 dark:bg-slate-100 dark:bg-opacity-30  w-screen  p-3 gap-2 font-bold'>
+                <Link to="/" className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold '>Home</Link>
+                <Link to="/movies/popular"  className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'>Popular</Link>
+                <Link to="/movies/top_rated" className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'>Trending</Link>
+                <Link to="/movies/upcoming" className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'>Upcoming</Link>
                 <div className='text-neutral-200 dark:text-nav  flex gap-2 hover:cursor-pointer font-bold'>
                 <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'><AiOutlineInstagram /></div>
                 <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'><AiOutlineFacebook /></div>
