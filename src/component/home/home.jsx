@@ -14,7 +14,7 @@ export default function Home() {
     }, [])
     return (
         <>
-            <div className="relative dark:bg-darkBg">
+            <div className="relative">
                 <Carousel
                     axis="horizontal"
                     showThumbs={false}
