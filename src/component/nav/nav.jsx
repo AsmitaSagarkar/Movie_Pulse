@@ -48,22 +48,22 @@ export default function Nav() {
             <div className='text-4xl hover:cursor-pointer'><AiOutlineInstagram /></div>
             <div className='text-4xl hover:cursor-pointer'><AiOutlineFacebook /></div>
             <div className='text-4xl hover:cursor-pointer'><AiOutlineTwitter /></div>
-            <div className='text-2xl hover:cursor-pointer' onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark}/>}</div>
+            <div className='text-2xl hover:cursor-pointer my-5' onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark}/>}</div>
 
             </div>
 
-            <button className='lg:hidden font-fontfam font-bold text-4xl flex justify-end items-center mr-12 relative' onClick={toggle}> {isOpen? <CloseIcon /> : <CiMenuFries />}</button>
+            <button className='lg:hidden font-fontfam font-bold text-4xl flex justify-end  mr-12 relative my-5' onClick={toggle}> {isOpen? <CloseIcon /> : <CiMenuFries />}</button>
             {isOpen&&(
-                <div className='flex flex-col items-center z-10 absolute top-40  bg-black bg-opacity-60 dark:bg-slate-100 dark:bg-opacity-30  w-screen  p-3 gap-2 font-bold'>
-                <Link to="/" className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold '>Home</Link>
-                <Link to="/movies/popular"  className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'>Popular</Link>
-                <Link to="/movies/top_rated" className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'>Trending</Link>
-                <Link to="/movies/upcoming" className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'>Upcoming</Link>
-                <div className='text-neutral-200 dark:text-nav  flex gap-2 hover:cursor-pointer font-bold'>
-                <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'><AiOutlineInstagram /></div>
-                <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'><AiOutlineFacebook /></div>
-                <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'><AiOutlineTwitter /></div></div>
-                <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark}/>}</div>
+                <div className='flex flex-col items-center z-10 absolute top-20   backdrop-blur-lg dark:bg-opacity-30  w-screen  p-3 gap-2 font-bold'>
+                <Link to="/" className='text-neutral-200  hover:cursor-pointer font-bold '>Home</Link>
+                <Link to="/movies/popular"  className='text-neutral-200   hover:cursor-pointer font-bold'>Popular</Link>
+                <Link to="/movies/top_rated" className='text-neutral-200   hover:cursor-pointer font-bold'>Trending</Link>
+                <Link to="/movies/upcoming" className='text-neutral-200   hover:cursor-pointer font-bold'>Upcoming</Link>
+                <div className='text-neutral-200   flex gap-2 hover:cursor-pointer font-bold'>
+                <div className='text-neutral-200   hover:cursor-pointer font-bold'><AiOutlineInstagram /></div>
+                <div className='text-neutral-200  hover:cursor-pointer font-bold'><AiOutlineFacebook /></div>
+                <div className='text-neutral-200   hover:cursor-pointer font-bold'><AiOutlineTwitter /></div></div>
+                <div className='text-neutral-200   hover:cursor-pointer font-bold'onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark}/>}</div>
                 </div>
 
 
