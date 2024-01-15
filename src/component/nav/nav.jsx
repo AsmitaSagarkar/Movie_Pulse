@@ -5,6 +5,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import CloseIcon from '@mui/icons-material/Close';
 
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 import "../../index.css";
 import { useState } from "react";
@@ -12,6 +13,7 @@ import { useState } from "react";
 
 
 export default function Nav() {
+    const { loginWithRedirect,isAuthenticated,logout,user } = useAuth0();
 
     const [isOpen ,setIsOpen] = useState(false);
     function toggle(){
@@ -45,14 +47,20 @@ export default function Nav() {
             </div>
             
             <div className='lg:flex lg:flex-row lg:justify-center lg:gap-12 font-fontfam font-bold hidden my-5'>
-            <div className='text-4xl hover:cursor-pointer'><AiOutlineInstagram /></div>
-            <div className='text-4xl hover:cursor-pointer'><AiOutlineFacebook /></div>
-            <div className='text-4xl hover:cursor-pointer'><AiOutlineTwitter /></div>
+            
+            { isAuthenticated ?
+            <button className='text-2xl' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log Out</button> :
+            <button className='text-2xl' onClick={() => loginWithRedirect()}>Log In</button>
+
+            }
             <div className='text-2xl hover:cursor-pointer' onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark}/>}</div>
 
             </div>
 
             <button className='lg:hidden font-fontfam font-bold text-4xl flex   mr-3 relative my-5 justify-end' onClick={toggle}> {isOpen? <CloseIcon /> : <CiMenuFries />}</button>
+
+
+
             {isOpen&&(
                 <div className='flex flex-col items-center z-10 absolute top-20   bg-slate-950 dark:bg-slate-50 dark:bg-opacity-30  w-screen  p-3 gap-2 font-bold'>
                 <Link to="/" className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold '>Home</Link>
