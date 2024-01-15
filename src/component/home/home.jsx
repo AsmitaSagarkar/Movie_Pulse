@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 // import "./home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
@@ -6,6 +7,8 @@ import { Link } from 'react-router-dom';
 import "../../index.css";
 import Movie from "../movie/movie";
 export default function Home() {
+    
+
 
     const [popularMovies, setPopularMovies] = useState([]);
     useEffect(() => {
