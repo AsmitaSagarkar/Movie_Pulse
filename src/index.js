@@ -10,7 +10,7 @@ ReactDom.render(
     domain="dev-e42l55i1jjau2q6a.us.auth0.com"
     clientId="4zRtOP2k2NFZwgssj2zJaTnki5isOV5m"
     authorizationParams={{
-      redirect_uri: "https://asmitasagarkar.github.io/Movie_Pulse/callback"
+      redirect_uri: window.location.origin
     }}
   >
   <Main />
