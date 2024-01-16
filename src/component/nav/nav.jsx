@@ -68,9 +68,11 @@ export default function Nav() {
                 <Link to="/movies/top_rated" className='text-neutral-200  dark:text-nav hover:cursor-pointer font-bold'>Trending</Link>
                 <Link to="/movies/upcoming" className='text-neutral-200  dark:text-nav hover:cursor-pointer font-bold'>Upcoming</Link>
                 <div className='text-neutral-200   flex gap-2 hover:cursor-pointer font-bold dark:text-nav'>
-                <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'><AiOutlineInstagram /></div>
-                <div className='text-neutral-200 dark:text-nav hover:cursor-pointer font-bold'><AiOutlineFacebook /></div>
-                <div className='text-neutral-200 dark:text-nav hover:cursor-pointer font-bold'><AiOutlineTwitter /></div></div>
+                <div>{ isAuthenticated ?
+                    <button className='text-2xl' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log Out</button> :
+                    <button className='text-2xl' onClick={() => loginWithRedirect()}>Log In</button>
+        
+                    }</div>
                 <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark}/>}</div>
                 </div>
 
