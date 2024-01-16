@@ -1,6 +1,5 @@
 {
   "name": "movie_website",
-  "homepage": "https://AsmitaSagarkar.github.io/Movie_Pulse",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
