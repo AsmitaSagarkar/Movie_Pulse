@@ -69,7 +69,7 @@ export default function Nav() {
                 <Link to="/movies/upcoming" className='text-neutral-200  dark:text-nav hover:cursor-pointer font-bold'>Upcoming</Link>
                 <div className='text-neutral-200   flex gap-2 hover:cursor-pointer font-bold dark:text-nav'>
                 { isAuthenticated ?
-                    <button className='text-xl' onClick={() => logout({ logoutParams: { returnTo: "https://AsmitaSagarkar.github.io/Movie_Pulse" } })}>Log Out</button> :
+                    <button className='text-xl' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log Out</button> :
                     <button className='text-xl' onClick={() => loginWithRedirect()}>Log In</button>
         
                     }
