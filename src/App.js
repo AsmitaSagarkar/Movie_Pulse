@@ -11,7 +11,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 export default function Main(){
     
     return(
-        <div style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/cubes.png")' }} className="dark:bg-darkBg" >
+        <div  className="dark:bg-darkBg" >
         
 
 
