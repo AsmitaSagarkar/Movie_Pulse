@@ -41,7 +41,7 @@ export default function Nav() {
     }
     return (
 
-        <nav className='grid lg:grid-cols-3 lg:items-center text-nav dark:text-neutral-100 grid-cols-2 '>
+        <nav className='grid lg:grid-cols-3 lg:items-center text-nav dark:text-neutral-100 grid-cols-2 border-b-2  shadow-lg shadow-nav dark:shadow-white dark:shadow-lg '>
             <div className='flex ml-3 lg:ml-12 my-5'><h1 className='text-nav dark:text-neutral-100 font-fontfam font-bold lg:text-4xl text-2xl hover:underline hover:cursor-pointer hover:animate-pulse'>MOVIE PULSE</h1></div>
             <div className='lg:flex lg:justify-around text-2xl font-fontfam font-bold hidden my-5'>
                 <Link to="/" className='hover:underline'>Home</Link>
@@ -62,7 +62,7 @@ export default function Nav() {
                             <KeyboardArrowDownIcon onClick={showDiv} /></div>
                         {
                             showLogOut && (
-                                <div onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>LogOut</div>
+                                <div onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} >LogOut</div>
                             )
                         }
                     </button>
@@ -76,7 +76,10 @@ export default function Nav() {
                 }
                 </div>
 
-                <div className='text-2xl hover:cursor-pointer' onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark} />}</div>
+                <div className='text-2xl hover:cursor-pointer' onClick={darkMode}>{isDark ?
+                     <DarkModeIcon onClick={addDark} /> 
+                     : 
+                     <LightModeIcon onClick={removeDark} />}</div>
 
             </div>
 
