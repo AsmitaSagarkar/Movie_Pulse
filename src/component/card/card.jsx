@@ -29,7 +29,7 @@ const Card = ({movie}) => {
             <Link to={`/movie/${movie.id}`}>
 
                 <div> 
-                    <img className = "h-64 w-72 border-nav dark:border-cyan-300 border-2 rounded-2xl"src={`https://image.tmdb.org/t/p/original${movie ? movie.poster_path : ""}`} alt='loading'></img>
+                    <img className = "h-64 w-72 border-nav dark:border-cyan-300 border-2 rounded-2xl shadow-lg shadow-nav dark:shadow-cyan-200 "src={`https://image.tmdb.org/t/p/original${movie ? movie.poster_path : ""}`} alt='loading' ></img>
                     <div className='p-2'>
                         <div className='text-nav dark:text-cyan-300 font-bold text-lg'>{movie ? movie.original_title : ""}</div>
                         <div className='grid grid-cols-2'><div className='text-nav dark:text-cyan-300'>{movie ? movie.release_date : ""}</div>
