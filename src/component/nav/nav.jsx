@@ -6,6 +6,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import "../../index.css";
 import { useState } from "react";
@@ -13,25 +14,30 @@ import { useState } from "react";
 
 
 export default function Nav() {
-    const { loginWithRedirect,isAuthenticated,logout,user } = useAuth0();
+    const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
+    const [showLogOut, setShowLogOut] = useState(false);
 
-    const [isOpen ,setIsOpen] = useState(false);
-    function toggle(){
+
+    const [isOpen, setIsOpen] = useState(false);
+    function toggle() {
         setIsOpen(!isOpen);
     }
+    function showDiv() {
+        setShowLogOut(!showLogOut);
+    }
 
-    const [isDark,setIsDark] = useState(true);
-    function darkMode(){
+    const [isDark, setIsDark] = useState(true);
+    function darkMode() {
         setIsDark(!isDark);
 
     }
-    function addDark(){
+    function addDark() {
         document.documentElement.classList.add('dark');
 
     }
-    function removeDark(){
+    function removeDark() {
         document.documentElement.classList.remove('dark');
-        
+
     }
     return (
 
@@ -39,53 +45,76 @@ export default function Nav() {
             <div className='flex ml-3 lg:ml-12 my-5'><h1 className='text-nav dark:text-neutral-100 font-fontfam font-bold lg:text-4xl text-2xl hover:underline hover:cursor-pointer hover:animate-pulse'>MOVIE PULSE</h1></div>
             <div className='lg:flex lg:justify-around text-2xl font-fontfam font-bold hidden my-5'>
                 <Link to="/" className='hover:underline'>Home</Link>
-                <Link to="/movies/popular"className='hover:underline'>Popular</Link>
-                <Link to="/movies/top_rated"className='hover:underline'>Trending</Link>
-                <Link to="/movies/upcoming"className='hover:underline'>Upcoming</Link>
-  
+                <Link to="/movies/popular" className='hover:underline'>Popular</Link>
+                <Link to="/movies/top_rated" className='hover:underline'>Trending</Link>
+                <Link to="/movies/upcoming" className='hover:underline'>Upcoming</Link>
 
-            </div>
-            
-            <div className='lg:flex lg:flex-row lg:justify-center lg:gap-12 font-fontfam font-bold hidden my-5'>
-            
-            { isAuthenticated ?
-            <button className='text-2xl' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log Out</button> :
-            <button className='text-2xl' onClick={() => loginWithRedirect()}>Log In</button>
-
-            }
-            <div className='text-2xl hover:cursor-pointer' onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark}/>}</div>
 
             </div>
 
-            <button className='lg:hidden font-fontfam font-bold text-4xl flex   mr-3 relative my-5 justify-end' onClick={toggle}> {isOpen? <CloseIcon /> : <CiMenuFries />}</button>
+            <div className='lg:grid lg:grid-cols-2 lg:justify-center lg:gap-12 font-fontfam font-bold hidden my-5 ml-14'>
+
+                <div className='flex justify-center ml-11'>
+                {isAuthenticated ?
+                    <button className='text-2xl absolute' >
+                        <div>{user.name}
+
+                            <KeyboardArrowDownIcon onClick={showDiv} /></div>
+                        {
+                            showLogOut && (
+                                <div onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>LogOut</div>
+                            )
+                        }
+                    </button>
 
 
 
-            {isOpen&&(
+
+                    :
+                    <button className='text-2xl' onClick={() => loginWithRedirect()}>Log In</button>
+
+                }
+                </div>
+
+                <div className='text-2xl hover:cursor-pointer' onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark} />}</div>
+
+            </div>
+
+            <button className='lg:hidden font-fontfam font-bold text-4xl flex   mr-3 relative my-5 justify-end' onClick={toggle}> {isOpen ? <CloseIcon /> : <CiMenuFries />}</button>
+
+
+
+            {isOpen && (
                 <div className='flex flex-col items-center z-10 absolute top-20   bg-slate-950 dark:bg-slate-50 dark:bg-opacity-30  w-screen  p-3 gap-2 font-bold'>
-                <Link to="/" className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold '>Home</Link>
-                <Link to="/movies/popular"  className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'>Popular</Link>
-                <Link to="/movies/top_rated" className='text-neutral-200  dark:text-nav hover:cursor-pointer font-bold'>Trending</Link>
-                <Link to="/movies/upcoming" className='text-neutral-200  dark:text-nav hover:cursor-pointer font-bold'>Upcoming</Link>
-                <div className='text-neutral-200   flex gap-2 hover:cursor-pointer font-bold dark:text-nav'>
-                { isAuthenticated ?
-                    <button className='text-xl' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log Out</button> :
-                    <button className='text-xl' onClick={() => loginWithRedirect()}>Log In</button>
-        
-                    }
-                
+                    <Link to="/" className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold '>Home</Link>
+                    <Link to="/movies/popular" className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'>Popular</Link>
+                    <Link to="/movies/top_rated" className='text-neutral-200  dark:text-nav hover:cursor-pointer font-bold'>Trending</Link>
+                    <Link to="/movies/upcoming" className='text-neutral-200  dark:text-nav hover:cursor-pointer font-bold'>Upcoming</Link>
+                    <div className='text-neutral-200   flex gap-2 hover:cursor-pointer font-bold dark:text-nav'>
+                        <div>{isAuthenticated ?
+                            <button className='text-xl'>{user.name} <KeyboardArrowDownIcon onClick={setShowLogOut} />
+                            {
+                                showLogOut && (
+                                    <div onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</div>
+                                )
+                            }
+                            </button> :
+                            <button className='text-xl' onClick={() => loginWithRedirect()}>Log In</button>
+
+                        }</div>
+
+                    </div>
+                    <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold' onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark} />}</div>
                 </div>
-                <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark}/>}</div>
-                </div>
 
 
 
-            
-                )}
+
+            )}
 
 
         </nav>
-        
-        
+
+
     )
 }
