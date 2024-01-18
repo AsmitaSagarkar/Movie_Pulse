@@ -1,6 +1,7 @@
 import Nav from "./component/nav/nav";
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import Home from "./component/home/home";
+import Footer from "./component/footer/footer.jsx"
 
 // import "../public/style.css";
 import "./index.css";
@@ -28,6 +29,7 @@ export default function Main(){
         
         </Routes>
         </Router>
+        <Footer />
         </div>
         
         

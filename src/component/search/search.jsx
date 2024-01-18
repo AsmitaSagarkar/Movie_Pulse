@@ -17,16 +17,14 @@ export default function Search({ prop }) {
     }, [prop]);
 
     const handleFilter = (value) => {
-        if (value === "") {
-            setData(filterData);
-        }
-        else {
+        
+        
 
             const res = filterData.filter(movie =>
                 movie.original_title.toLowerCase().includes(value.toLowerCase())
             );
             setData(res);
-        }
+        
 
     };
 
