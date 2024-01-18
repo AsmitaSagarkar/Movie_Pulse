@@ -18,7 +18,7 @@ export default function Home() {
     }, [])
     return (
         <>
-        <Search className="flex justify-center" prop={"popular"} />
+        <Search className="flex justify-center mt-5" prop={"popular"} />
             <div className="relative">
                 <Carousel
                     axis="horizontal"
