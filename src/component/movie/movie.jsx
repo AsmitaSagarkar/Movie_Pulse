@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "../card/card";
 import "../../index.css"
 import { useParams } from "react-router-dom";
+import Search from "../search/search";
 
 const Movie = () => {
     const [movielist, setMovie] = useState([]);
@@ -19,8 +20,12 @@ const Movie = () => {
 
     
 
+   
     return (
+
         <>
+            
+            <Search prop={type}  />
 
             <div>
             <h2 className="text-nav dark:text-white text-2xl font-bold mt-2 md:ml-12 m-0 ml-4 mb-2">{(type ? type : "POPULAR").toUpperCase().replace(/_/g,' ')}</h2>
