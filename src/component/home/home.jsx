@@ -5,7 +5,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';
 import "../../index.css";
-import Movie from "../movie/movie";
+import Popular from "../popular/popular";
+import Search from "../search/search";
 export default function Home() {
     
 
@@ -17,6 +18,7 @@ export default function Home() {
     }, [])
     return (
         <>
+        <Search className="flex justify-center" prop={"popular"} />
             <div className="relative">
                 <Carousel
                     axis="horizontal"
@@ -50,7 +52,7 @@ export default function Home() {
                     ))}
                 </Carousel>
             </div>
-            <Movie />
+            <Popular />
         </>
     )
 
