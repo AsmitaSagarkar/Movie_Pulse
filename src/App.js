@@ -6,7 +6,7 @@ import Home from "./component/home/home";
 import "./index.css";
 import Movie from "./component/movie/movie";
 import Detail from "./component/detail/detail";
-import { useAuth0 } from "@auth0/auth0-react";
+
 
 export default function Main(){
     
@@ -19,6 +19,7 @@ export default function Main(){
         
         <Router>
         <Nav />
+       
         
         <Routes>
         <Route path="/*" element = {<Home />}></Route>
@@ -27,8 +28,8 @@ export default function Main(){
         
         </Routes>
         </Router>
-        
         </div>
+        
         
         
         
