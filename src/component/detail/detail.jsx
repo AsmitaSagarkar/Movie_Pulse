@@ -26,7 +26,7 @@ export default function Detail() {
                 <div className="grid h-80 gap-3 justify-items-center md:justify-items-start">
                     <h2 className="text-nav dark:text-white md:text-5xl text-4xl font-bold">{movieDetail ? movieDetail.original_title : ""}</h2>
                     
-                    <div className="text-nav dark:text-white flex gap-4 h-9 w-12 justify-center md:justify-start">
+                    <div className="text-nav dark:text-white flex gap-4 h-9 w-fit justify-center md:justify-start">
 
                         {
                             movieDetail && movieDetail.genres

@@ -83,12 +83,12 @@ export default function Nav() {
 
             </div>
 
-            <button className='lg:hidden font-fontfam font-bold text-4xl flex   mr-3 relative my-5 justify-end' onClick={toggle}> {isOpen ? <CloseIcon /> : <CiMenuFries />}</button>
+            <button className='lg:hidden font-fontfam font-bold text-4xl flex   mr-3 relative my-5 justify-end z-50' onClick={toggle}> {isOpen ? <CloseIcon /> : <CiMenuFries />}</button>
 
 
 
             {isOpen && (
-                <div className='flex flex-col items-center z-10 absolute top-20 w-screen  p-3 gap-2 font-bold bg-white dark:bg-slate-900 h-screen justify-center'>
+                <div className='flex flex-col items-center z-10 absolute  w-screen  p-3 gap-2 font-bold bg-white dark:bg-slate-900 h-screen justify-center text-2xl'>
                     <Link to="/" className='text-nav dark:text-white  hover:cursor-pointer font-bold '
                     onClick={toggle}>Home</Link>
                     <Link to="/movies/popular" className='text-nav dark:text-white  hover:cursor-pointer font-bold'onClick={toggle}>Popular</Link>
@@ -108,7 +108,7 @@ export default function Nav() {
                         }</div>
 
                     </div>
-                    <div className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold' onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark} />}</div>
+                    <div className='text-nav dark:text-white  hover:cursor-pointer font-bold' onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark} />}</div>
                 </div>
 
 
