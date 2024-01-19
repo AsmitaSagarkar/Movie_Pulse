@@ -4,6 +4,7 @@ import "../../index.css"
 import { useParams } from "react-router-dom";
 import Search from "../search/search";
 import Footer from "../footer/footer.jsx";
+import Nav from "../nav/nav.jsx";
 
 const Movie = () => {
     const [movielist, setMovie] = useState([]);
@@ -25,7 +26,8 @@ const Movie = () => {
    
     return (
 
-        <>
+        <> 
+           <Nav />
             
             <Search prop={type}  />
 

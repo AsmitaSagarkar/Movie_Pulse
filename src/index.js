@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import Main from "./App";
+import App from "./App";
 import "./index.css";
 import { Auth0Provider } from '@auth0/auth0-react';
 // import '../public/style.css';
@@ -13,7 +13,7 @@ ReactDom.render(
       redirect_uri: window.location.origin
     }}
   >
-  <Main />
+  <App />
   </Auth0Provider>
 
 

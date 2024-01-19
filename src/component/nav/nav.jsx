@@ -41,22 +41,22 @@ export default function Nav() {
     }
     return (
 
-        <nav className='grid lg:grid-cols-3 lg:items-center text-nav dark:text-neutral-100 grid-cols-2 border-b-2  shadow-lg  shadow-nav dark:shadow-white dark:shadow-sm fixed w-full bg-white dark:bg-slate-900 z-50 top-0'>
-            <div className='flex ml-3 lg:ml-12 my-5'><h1 className='text-nav dark:text-neutral-100 font-fontfam font-bold lg:text-4xl text-2xl hover:underline hover:cursor-pointer hover:animate-pulse'>MOVIE PULSE</h1></div>
+        <nav className=' grid lg:grid-cols-3 lg:items-center grid-cols-2 border-b-2  shadow-shade fixed w-full bg-white dark:bg-darkBg  z-50 top-0 '>
+            <div className='flex ml-3 lg:ml-12 my-5'><Link to="/" className='bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent  font-fontfam font-bold lg:text-4xl text-2xl hover:underline hover:cursor-pointer hover:animate-pulse'>MOVIE PULSE</Link></div>
             <div className='lg:flex lg:justify-around text-2xl font-fontfam font-bold hidden my-5'>
-                <Link to="/" className='hover:underline'>Home</Link>
-                <Link to="/movies/popular" className='hover:underline'>Popular</Link>
-                <Link to="/movies/top_rated" className='hover:underline'>Trending</Link>
-                <Link to="/movies/upcoming" className='hover:underline'>Upcoming</Link>
+                <Link to="/home" className='hover:underline bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>Home</Link>
+                <Link to="/movies/popular " className='hover:underline bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>Popular</Link>
+                <Link to="/movies/top_rated" className='hover:underline bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>Trending</Link>
+                <Link to="/movies/upcoming" className='hover:underline bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>Upcoming</Link>
 
 
             </div>
 
-            <div className='lg:grid lg:grid-cols-2 lg:justify-center lg:gap-12 font-fontfam font-bold hidden my-5 ml-14'>
+            <div className='lg:grid lg:grid-cols-2 lg:justify-center lg:gap-12 font-fontfam font-bold hidden my-5 ml-14 bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>
 
                 <div className='flex justify-center ml-11'>
                 {isAuthenticated ?
-                    <button className='text-2xl absolute' >
+                    <button className='text-2xl absolute text-white border-2 rounded-lg border-emerald-700  bg-gradient-to-tr from-lime-400 via-emerald-500 to-teal-700 px-5 py-1' >
                         <div>{user.name}
 
                             <KeyboardArrowDownIcon onClick={showDiv} /></div>
@@ -71,12 +71,12 @@ export default function Nav() {
 
 
                     :
-                    <button className='text-2xl' onClick={() => loginWithRedirect()}>Log In</button>
+                    <button className='text-2xl text-white border-2 rounded-lg border-emerald-700  bg-gradient-to-tr from-lime-400 via-emerald-500 to-teal-700 px-5 py-1' onClick={() => loginWithRedirect()}>Log In</button>
 
                 }
                 </div>
 
-                <div className='text-2xl hover:cursor-pointer' onClick={darkMode}>{isDark ?
+                <div className='text-2xl hover:cursor-pointer text-green-700 ' onClick={darkMode}>{isDark ?
                      <DarkModeIcon onClick={addDark} /> 
                      : 
                      <LightModeIcon onClick={removeDark} />}</div>
@@ -88,27 +88,27 @@ export default function Nav() {
 
 
             {isOpen && (
-                <div className='flex flex-col items-center z-10 absolute  w-screen  p-3 gap-2 font-bold bg-white dark:bg-slate-900 h-screen justify-center text-2xl'>
-                    <Link to="/" className='text-nav dark:text-white  hover:cursor-pointer font-bold '
+                <div className='flex flex-col items-center z-10 absolute  w-screen  p-3 gap-2 font-bold bg-white dark:bg-slate-900 h-screen justify-center text-2xl bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>
+                    <Link to="/" className='  hover:cursor-pointer font-bold '
                     onClick={toggle}>Home</Link>
-                    <Link to="/movies/popular" className='text-nav dark:text-white  hover:cursor-pointer font-bold'onClick={toggle}>Popular</Link>
-                    <Link to="/movies/top_rated" className='text-nav  dark:text-white hover:cursor-pointer font-bold'onClick={toggle}>Trending</Link>
-                    <Link to="/movies/upcoming" className='text-nav  dark:text-white hover:cursor-pointer font-bold'onClick={toggle}>Upcoming</Link>
-                    <div className='text-nav   flex gap-2 hover:cursor-pointer font-bold dark:text-white'>
+                    <Link to="/movies/popular" className='  hover:cursor-pointer font-bold'onClick={toggle}>Popular</Link>
+                    <Link to="/movies/top_rated" className=' hover:cursor-pointer font-bold'onClick={toggle}>Trending</Link>
+                    <Link to="/movies/upcoming" className=' hover:cursor-pointer font-bold'onClick={toggle}>Upcoming</Link>
+                    <div className=' flex gap-2 hover:cursor-pointer font-bold bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>
                         <div>{isAuthenticated ?
-                            <button className='text-xl'>{user.name} <KeyboardArrowDownIcon onClick={setShowLogOut} />
+                            <button className='text-xl text-white border-2 rounded-lg border-emerald-700  bg-gradient-to-tr from-lime-400 via-emerald-500 to-teal-700 px-5 py-1'>{user.name} <KeyboardArrowDownIcon onClick={setShowLogOut} />
                             {
                                 showLogOut && (
                                     <div onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</div>
                                 )
                             }
                             </button> :
-                            <button className='text-xl' onClick={() => loginWithRedirect()}>Log In</button>
+                            <button className='text-xl text-white border-2 rounded-lg border-emerald-700  bg-gradient-to-tr from-lime-400 via-emerald-500 to-teal-700 px-5 py-1' onClick={() => loginWithRedirect()}>Log In</button>
 
                         }</div>
 
                     </div>
-                    <div className='text-nav dark:text-white  hover:cursor-pointer font-bold' onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark} />}</div>
+                    <div className='text-green-700' onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark} />}</div>
                 </div>
 
 
