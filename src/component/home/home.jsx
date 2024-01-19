@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import "../../index.css";
 import Popular from "../popular/popular";
 import Search from "../search/search";
+import Footer from "../footer/footer.jsx";
 export default function Home() {
     
 
@@ -53,6 +54,7 @@ export default function Home() {
                 </Carousel>
             </div>
             <Popular />
+            <Footer />
         </>
     )
 

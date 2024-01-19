@@ -3,6 +3,7 @@ import Card from "../card/card";
 import "../../index.css"
 import { useParams } from "react-router-dom";
 import Search from "../search/search";
+import Footer from "../footer/footer.jsx";
 
 const Movie = () => {
     const [movielist, setMovie] = useState([]);
@@ -27,6 +28,8 @@ const Movie = () => {
             
             <Search prop={type}  />
 
+            
+
             <div>
             <h2 className="text-nav dark:text-white text-2xl font-bold mt-2 md:ml-12 m-0 ml-4 mb-2">{(type ? type : "POPULAR").toUpperCase().replace(/_/g,' ')}</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-12 md:ml-12 md:mr-12 gap-3 mr-2 ml-2">
@@ -39,7 +42,10 @@ const Movie = () => {
                     )
                 }
                 </div>
+            
             </div>
+            <Footer />
+           
         </>
     )
 }
