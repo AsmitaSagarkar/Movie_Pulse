@@ -18,9 +18,9 @@ export default function Detail() {
 
     return <>
         <div>
-            <div className="md:grid md:grid-cols-2 mt-10">
+            <div className="md:grid md:grid-cols-2 mb-[200px] md:mb-4 absolute top-[30%]">
                 <div className="flex justify-center">
-                    <img className="md:h-4/6 md:w-4/6 h-72 w-72 " src={`https://image.tmdb.org/t/p/original${movieDetail ? movieDetail.poster_path : ""}`} alt='loading'></img>
+                    <img className="md:h-4/6 md:w-4/6 h-72 w-72 shadow-lg shadow-nav" src={`https://image.tmdb.org/t/p/original${movieDetail ? movieDetail.poster_path : ""}`} alt='loading'></img>
                 </div>
 
                 <div className="grid h-80 gap-3 justify-items-center md:justify-items-start">

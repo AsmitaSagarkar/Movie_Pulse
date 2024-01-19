@@ -41,7 +41,7 @@ export default function Nav() {
     }
     return (
 
-        <nav className='grid lg:grid-cols-3 lg:items-center text-nav dark:text-neutral-100 grid-cols-2 border-b-2  shadow-lg shadow-nav dark:shadow-white dark:shadow-lg '>
+        <nav className='grid lg:grid-cols-3 lg:items-center text-nav dark:text-neutral-100 grid-cols-2 border-b-2  shadow-lg  shadow-nav dark:shadow-white dark:shadow-sm fixed w-full bg-white dark:bg-slate-900 z-50 '>
             <div className='flex ml-3 lg:ml-12 my-5'><h1 className='text-nav dark:text-neutral-100 font-fontfam font-bold lg:text-4xl text-2xl hover:underline hover:cursor-pointer hover:animate-pulse'>MOVIE PULSE</h1></div>
             <div className='lg:flex lg:justify-around text-2xl font-fontfam font-bold hidden my-5'>
                 <Link to="/" className='hover:underline'>Home</Link>
@@ -88,12 +88,13 @@ export default function Nav() {
 
 
             {isOpen && (
-                <div className='flex flex-col items-center z-10 absolute top-20   bg-slate-950 dark:bg-slate-50 dark:bg-opacity-30  w-screen  p-3 gap-2 font-bold'>
-                    <Link to="/" className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold '>Home</Link>
-                    <Link to="/movies/popular" className='text-neutral-200 dark:text-nav  hover:cursor-pointer font-bold'>Popular</Link>
-                    <Link to="/movies/top_rated" className='text-neutral-200  dark:text-nav hover:cursor-pointer font-bold'>Trending</Link>
-                    <Link to="/movies/upcoming" className='text-neutral-200  dark:text-nav hover:cursor-pointer font-bold'>Upcoming</Link>
-                    <div className='text-neutral-200   flex gap-2 hover:cursor-pointer font-bold dark:text-nav'>
+                <div className='flex flex-col items-center z-10 absolute top-20 w-screen  p-3 gap-2 font-bold bg-white dark:bg-slate-900 h-screen justify-center'>
+                    <Link to="/" className='text-nav dark:text-white  hover:cursor-pointer font-bold '
+                    onClick={toggle}>Home</Link>
+                    <Link to="/movies/popular" className='text-nav dark:text-white  hover:cursor-pointer font-bold'onClick={toggle}>Popular</Link>
+                    <Link to="/movies/top_rated" className='text-nav  dark:text-white hover:cursor-pointer font-bold'onClick={toggle}>Trending</Link>
+                    <Link to="/movies/upcoming" className='text-nav  dark:text-white hover:cursor-pointer font-bold'onClick={toggle}>Upcoming</Link>
+                    <div className='text-nav   flex gap-2 hover:cursor-pointer font-bold dark:text-white'>
                         <div>{isAuthenticated ?
                             <button className='text-xl'>{user.name} <KeyboardArrowDownIcon onClick={setShowLogOut} />
                             {
