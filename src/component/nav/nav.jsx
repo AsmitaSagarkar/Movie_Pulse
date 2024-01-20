@@ -42,12 +42,12 @@ export default function Nav() {
     return (
 
         <nav className=' grid lg:grid-cols-3 lg:items-center grid-cols-2 border-b-2  shadow-shade fixed w-full bg-white dark:bg-darkBg  z-50 top-0 '>
-            <div className='flex ml-3 lg:ml-12 my-5'><Link to="/" className='bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent  font-fontfam font-bold lg:text-4xl text-2xl hover:underline hover:cursor-pointer hover:animate-pulse'>MOVIE PULSE</Link></div>
+            <div className='flex ml-3 lg:ml-12 my-5'><Link to="/" className='bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent  font-fontfam font-bold lg:text-4xl text-2xl hover:underline hover:cursor-pointer hover:animate-pulse dark:text-white'>MOVIE PULSE</Link></div>
             <div className='lg:flex lg:justify-around text-2xl font-fontfam font-bold hidden my-5'>
-                <Link to="/home" className='hover:underline bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>Home</Link>
-                <Link to="/movies/popular " className='hover:underline bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>Popular</Link>
-                <Link to="/movies/top_rated" className='hover:underline bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>Trending</Link>
-                <Link to="/movies/upcoming" className='hover:underline bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>Upcoming</Link>
+                <Link to="/home" className='hover:underline bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent dark:text-white'>Home</Link>
+                <Link to="/movies/popular " className='hover:underline bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent dark:text-white'>Popular</Link>
+                <Link to="/movies/top_rated" className='hover:underline bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent dark:text-white'>Trending</Link>
+                <Link to="/movies/upcoming" className='hover:underline bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent dark:text-white'>Upcoming</Link>
 
 
             </div>
@@ -56,7 +56,7 @@ export default function Nav() {
 
                 <div className='flex justify-center ml-11'>
                 {isAuthenticated ?
-                    <button className='text-2xl absolute text-white border-2 rounded-lg border-emerald-700  bg-gradient-to-tr from-lime-400 via-emerald-500 to-teal-700 px-5 py-1' >
+                    <button className='text-2xl absolute bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent dark:text-white' >
                         <div>{user.name}
 
                             <KeyboardArrowDownIcon onClick={showDiv} /></div>
@@ -76,7 +76,7 @@ export default function Nav() {
                 }
                 </div>
 
-                <div className='text-2xl hover:cursor-pointer text-green-700 ' onClick={darkMode}>{isDark ?
+                <div className='text-2xl hover:cursor-pointer text-green-700 dark:text-white' onClick={darkMode}>{isDark ?
                      <DarkModeIcon onClick={addDark} /> 
                      : 
                      <LightModeIcon onClick={removeDark} />}</div>
