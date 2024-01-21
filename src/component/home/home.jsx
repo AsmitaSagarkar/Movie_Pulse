@@ -15,12 +15,16 @@ export default function Home() {
 
 
     const [popularMovies, setPopularMovies] = useState([]);
+    const [isloading,setIsLoading] = useState(true);
     useEffect(() => {
         fetch("https://api.themoviedb.org/3/movie/popular?api_key=b20d18a891030a59756d2671848d1505&language=en-US")
-            .then(res => res.json()).then(data => setPopularMovies(data.results));
+            .then(res => res.json()).then(data => {setPopularMovies(data.results);setIsLoading(false)});
     }, [])
 
-   
+    if(isloading){
+        return <h2 className="bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent text-2xl font-bold  md:ml-12 m-0 ml-4 mb-5 mt-5 h-full w-full flex justify-center text-center align-middle items-center relative top-[50%]">Hey,We are searching the best movies for you !</h2>
+     }
+     
     return (
         <>
         <Nav />
