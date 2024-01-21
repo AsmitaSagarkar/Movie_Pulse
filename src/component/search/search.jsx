@@ -31,7 +31,7 @@ export default function Search({ prop }) {
             <div className='flex justify-center mb-10'>
                 <div className="p-2 border-2 border-emerald-700 rounded-full dark:border-white mt-[100px] md:w-[50%] w-[100%] flex gap-3 ">
                 
-                    <SearchIcon className="dark:text-white text-emerald-700" />
+                    <SearchIcon className=" text-emerald-700" />
                     <input
                         placeholder='Type here to search...'
                         className='bg-transparent outline-none caret-black dark:caret-white '

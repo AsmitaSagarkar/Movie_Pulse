@@ -1,7 +1,7 @@
 
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import Home from "./component/home/home";
-import Nav from "./component/nav/nav";
+
 import Search from "./component/search/search";
 
 // import "../public/style.css";
@@ -17,7 +17,7 @@ export default function App(){
         <div>
         
         <Router>
-        <Nav />
+        
         
         
        

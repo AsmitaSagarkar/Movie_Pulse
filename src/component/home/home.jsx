@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import Nav from "../nav/nav.jsx";
 // import "./home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
@@ -23,6 +23,7 @@ export default function Home() {
    
     return (
         <>
+        <Nav />
         
             <div className="relative">
                 <Carousel
