@@ -91,7 +91,7 @@ export default function Nav() {
 
             {isOpen && (
                 <div className='flex flex-col items-center z-10 absolute  w-screen  p-3 gap-2 font-bold bg-white dark:bg-slate-900 h-screen justify-center text-2xl '>
-                    <Link to="/" className='bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent  hover:cursor-pointer font-bold '
+                    <Link to="/home" className='bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent  hover:cursor-pointer font-bold '
                     onClick={toggle}>Home</Link>
                     <Link to="/movies/popular" className='bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent hover:cursor-pointer font-bold'onClick={toggle}>Popular</Link>
                     <Link to="/movies/top_rated" className='bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent hover:cursor-pointer font-bold'onClick={toggle}>Trending</Link>
