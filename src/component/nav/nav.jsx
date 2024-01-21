@@ -54,7 +54,7 @@ export default function Nav() {
 
             <div className='lg:grid lg:grid-cols-3 lg:justify-center lg:gap-5 font-fontfam font-bold hidden my-5 ml-2 bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>
 
-                <div className='flex  ml-2 justify-center items-center'>
+                <div className='flex   justify-center items-center ml-12'>
                 {isAuthenticated ?
                     <button className='text-2xl absolute bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent dark:text-white' >
                         <div>{user.name}
