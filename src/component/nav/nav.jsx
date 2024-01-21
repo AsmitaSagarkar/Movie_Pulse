@@ -111,7 +111,7 @@ export default function Nav() {
 
                     </div>
                     <div className='text-green-700' onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark} />}</div>
-                    <Link to="/search" className='text-emerald-700 dark:text-white ' ><SearchIcon /></Link>
+                    <Link to="/search" className='text-emerald-700 dark:text-white 'onClick={toggle} ><SearchIcon /></Link>
                 </div>
 
 

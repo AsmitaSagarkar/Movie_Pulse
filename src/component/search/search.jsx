@@ -1,5 +1,5 @@
 import SearchIcon from '@mui/icons-material/Search';
-
+import Nav from '../nav/nav';
 import { useEffect, useState } from 'react';
 import SearchMovie from './SearchMovie';
 
@@ -26,7 +26,8 @@ export default function Search({ prop }) {
     };
 
     return (
-        <>
+        <div className='h-full'>
+        <Nav />
            
             <div className='flex justify-center mb-10'>
                 <div className="p-2 border-2 border-emerald-700 rounded-full dark:border-white mt-[100px] md:w-[50%] w-[100%] flex gap-3 ">
@@ -49,6 +50,6 @@ export default function Search({ prop }) {
             </div>
 
 
-        </>
+        </div>
     );
 }
