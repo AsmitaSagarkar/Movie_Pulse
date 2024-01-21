@@ -21,7 +21,7 @@ export default function Main() {
                 </div>
             </div>
             
-            <div class="relative right-0 opacity-50 md:opacity-75 md:scale-150 scale-75 mt-10">
+            <div class="relative right-0 opacity-50 md:opacity-75 md:scale-150 scale-75 mt-10 mb-10">
             <img src={Img1} alt="" class="w-[10rem] absolute bottom-20 left-5 z-[0]" />
             <img src={Img2} alt="" class="w-[10rem] z-[50]"  />
             <img src={Img3} alt="" class="w-[10rem] absolute top-20 left-10"  />
