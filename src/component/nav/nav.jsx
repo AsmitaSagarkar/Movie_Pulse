@@ -83,17 +83,17 @@ export default function Nav() {
 
             </div>
 
-            <button className='lg:hidden font-fontfam font-bold text-4xl flex   mr-3 relative my-5 justify-end z-50' onClick={toggle}> {isOpen ? <CloseIcon /> : <CiMenuFries />}</button>
+            <button className='lg:hidden font-fontfam font-bold text-4xl flex text-emerald-700  mr-3 relative my-5 justify-end z-50' onClick={toggle}> {isOpen ? <CloseIcon /> : <CiMenuFries />}</button>
 
 
 
             {isOpen && (
-                <div className='flex flex-col items-center z-10 absolute  w-screen  p-3 gap-2 font-bold bg-white dark:bg-slate-900 h-screen justify-center text-2xl bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>
+                <div className='flex flex-col items-center z-10 absolute  w-screen  p-3 gap-2 font-bold bg-white dark:bg-slate-900 h-screen justify-center text-2xl '>
                     <Link to="/" className='  hover:cursor-pointer font-bold '
                     onClick={toggle}>Home</Link>
-                    <Link to="/movies/popular" className='  hover:cursor-pointer font-bold'onClick={toggle}>Popular</Link>
-                    <Link to="/movies/top_rated" className=' hover:cursor-pointer font-bold'onClick={toggle}>Trending</Link>
-                    <Link to="/movies/upcoming" className=' hover:cursor-pointer font-bold'onClick={toggle}>Upcoming</Link>
+                    <Link to="/movies/popular" className='bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent hover:cursor-pointer font-bold'onClick={toggle}>Popular</Link>
+                    <Link to="/movies/top_rated" className='bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent hover:cursor-pointer font-bold'onClick={toggle}>Trending</Link>
+                    <Link to="/movies/upcoming" className='bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent hover:cursor-pointer font-bold'onClick={toggle}>Upcoming</Link>
                     <div className=' flex gap-2 hover:cursor-pointer font-bold bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>
                         <div>{isAuthenticated ?
                             <button className='text-xl text-white border-2 rounded-lg border-emerald-700  bg-gradient-to-tr from-lime-400 via-emerald-500 to-teal-700 px-5 py-1'>{user.name} <KeyboardArrowDownIcon onClick={setShowLogOut} />
