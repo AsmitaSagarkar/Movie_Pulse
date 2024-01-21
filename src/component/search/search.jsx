@@ -1,8 +1,7 @@
 import SearchIcon from '@mui/icons-material/Search';
-import Card from '../card/card';
+
 import { useEffect, useState } from 'react';
-
-
+import SearchMovie from './SearchMovie';
 
 export default function Search({ prop }) {
     const [data, setData] = useState([]);
@@ -18,8 +17,6 @@ export default function Search({ prop }) {
 
     const handleFilter = (value) => {
         
-        
-
             const res = filterData.filter(movie =>
                 movie.original_title.toLowerCase().includes(value.toLowerCase())
             );
@@ -30,22 +27,21 @@ export default function Search({ prop }) {
 
     return (
         <>
-            <div className='flex justify-center'>
-                <div className="p-2 border-2 border-nav rounded-full dark:border-white mt-[100px] md:w-[50%] w-[100%] flex gap-3 ">
-                    <SearchIcon className="dark:text-white" />
+           
+            <div className='flex justify-center mb-10'>
+                <div className="p-2 border-2 border-emerald-700 rounded-full dark:border-white mt-[100px] md:w-[50%] w-[100%] flex gap-3 ">
+                
+                    <SearchIcon className="dark:text-white text-emerald-700" />
                     <input
                         placeholder='Type here to search...'
-                        className='bg-transparent outline-none caret-black dark:caret-white'
+                        className='bg-transparent outline-none caret-black dark:caret-white '
                         onChange={e => handleFilter(e.target.value)}
                     />
                 </div>
             </div>
 
             <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-12 md:ml-12 md:mr-12 gap-3 mr-2 ml-2'>
-                {data.map(movie => (
-                    <div className='flex justify-center'>
-                        <Card key={movie.id} movie={movie} /></div>
-                ))}
+                <SearchMovie data={data} />
 
 
                 

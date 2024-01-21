@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import Nav from "../nav/nav.jsx";
+
 // import "./home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';
 import "../../index.css";
 import Popular from "../popular/popular";
-import Search from "../search/search";
+
 import Footer from "../footer/footer.jsx";
+
+
 export default function Home() {
     
 
@@ -17,10 +19,11 @@ export default function Home() {
         fetch("https://api.themoviedb.org/3/movie/popular?api_key=b20d18a891030a59756d2671848d1505&language=en-US")
             .then(res => res.json()).then(data => setPopularMovies(data.results));
     }, [])
+
+   
     return (
         <>
-        <Nav />
-        <Search className="flex justify-center mt-5" prop={"popular"} />
+        
             <div className="relative">
                 <Carousel
                     axis="horizontal"
@@ -56,6 +59,7 @@ export default function Home() {
             </div>
             <Popular />
             <Footer />
+            
         </>
     )
 

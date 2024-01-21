@@ -3,7 +3,7 @@ import { CiMenuFries } from 'react-icons/ci';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import CloseIcon from '@mui/icons-material/Close';
-
+import SearchIcon from '@mui/icons-material/Search';
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -52,9 +52,9 @@ export default function Nav() {
 
             </div>
 
-            <div className='lg:grid lg:grid-cols-2 lg:justify-center lg:gap-12 font-fontfam font-bold hidden my-5 ml-14 bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>
+            <div className='lg:grid lg:grid-cols-3 lg:justify-center lg:gap-5 font-fontfam font-bold hidden my-5 ml-2 bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent'>
 
-                <div className='flex justify-center ml-11'>
+                <div className='flex justify-end ml-2'>
                 {isAuthenticated ?
                     <button className='text-2xl absolute bg-gradient-to-r from-lime-500 via-green-500 to-emerald-700 bg-clip-text text-transparent dark:text-white' >
                         <div>{user.name}
@@ -76,10 +76,12 @@ export default function Nav() {
                 }
                 </div>
 
-                <div className='text-2xl hover:cursor-pointer text-green-700 dark:text-white' onClick={darkMode}>{isDark ?
+                <div className='text-2xl hover:cursor-pointer text-green-700 dark:text-white flex justify-center items-center' onClick={darkMode}>{isDark ?
                      <DarkModeIcon onClick={addDark} /> 
                      : 
                      <LightModeIcon onClick={removeDark} />}</div>
+
+               <Link to="/search" className='text-emerald-700 dark:text-white text-2xl flex justify-left items-center' ><SearchIcon /></Link>
 
             </div>
 
@@ -109,6 +111,7 @@ export default function Nav() {
 
                     </div>
                     <div className='text-green-700' onClick={darkMode}>{isDark ? <DarkModeIcon onClick={addDark} /> : <LightModeIcon onClick={removeDark} />}</div>
+                    <Link to="/search" className='text-emerald-700 dark:text-white ' ><SearchIcon /></Link>
                 </div>
 
 

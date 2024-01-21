@@ -1,7 +1,8 @@
 
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import Home from "./component/home/home";
-
+import Nav from "./component/nav/nav";
+import Search from "./component/search/search";
 
 // import "../public/style.css";
 import "./index.css";
@@ -14,8 +15,10 @@ export default function App(){
     
     return(
         <div>
-
+        
         <Router>
+        <Nav />
+        
         
        
         
@@ -24,6 +27,7 @@ export default function App(){
         <Route path="/home" element = {<Home />}></Route>
         <Route path="movie/:id" element={<Detail />}></Route>
         <Route path="movies/:type" element={<Movie />}></Route>
+        <Route path="/search" element={<Search prop={"popular"} />}></Route>
         
         </Routes>
         </Router>
