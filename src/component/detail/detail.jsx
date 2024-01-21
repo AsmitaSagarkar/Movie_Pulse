@@ -19,8 +19,8 @@ export default function Detail() {
     return <>
         <Nav />
         <div>
-            <div className="md:grid md:grid-cols-2 mb-[200px] md:mb-4 absolute top-[30%]">
-                <div className="flex justify-center">
+            <div className="md:grid md:grid-cols-2  md:mb-4  dark:bg-slate-900 pt-24 mb-16">
+                <div className="flex justify-center ">
                     <img className="md:h-4/6 md:w-4/6 h-72 w-72 shadow-lg shadow-emerald-700" src={`https://image.tmdb.org/t/p/original${movieDetail ? movieDetail.poster_path : ""}`} alt='loading'></img>
                 </div>
 
